@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Zen Garden</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<title>Zen Garden</title>
 </head>
+
 <body>
 
-    <div class="app">
-        <div class="header"><p>Zen Garden</p></div>
-        <div class="quote"><p>Quote of the Day</p></div>
-        <div class="player-container"><p>Timer</p></div>
-        <div class="streak"><p>Streak</p></div>
-    </div>
+	<div class="app container-fluid">
+		<div class="row toolbar">
+			<div class="col-8 appname">
+				<p>Zen Garden<p>
+			</div>
+			<div class="col-4 settingsicon">Settings</div>
+		</div>
+		<div class="row quote">
+			<div class="col">
+				<p class="quoteheading">Quote of the Day:</p>
+				<p class="quotetext">"Let go, or be dragged"</p>
+				<p class="author">- Zen proverb</p>
+			</div>
+		</div>
+		<div class="row player-container">
+			<div class="col">
+				<div class="row">
+					<div class="col">
+						<p>Play Pause Circle</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<p>Time Countdown</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row streakbar">
+			<div class="col">
+				<p>Streak</p>
+			</div>
+		</div>
+	</div>
 
-<!-- Load Scripts-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="assets/js/scripts/app.js"></script>  
+	<!-- Load Scripts-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/scripts/app.js"></script>
 
-<!-- Load Tests -->
-<script src="assets/js/specs/app.js"></script>
+	<!-- Load Tests -->
+	<script src="assets/js/specs/app.js"></script>
 
 </body>
+
 </html>
