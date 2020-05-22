@@ -1,59 +1,67 @@
-
-
 /* Main Page */
 
 .toolbar {
-    background: lightcoral;
-    height: 5vh;
+  background: lightcoral;
+  height: 5vh;
 }
-.quote, .player-container, .streakbar {
-    text-align: center;
+.quote,
+.player-container,
+.streakbar {
+  text-align: center;
 }
 
 .quote {
-    background: lightsalmon;
-    height: 20vh;
+  background: lightsalmon;
+  height: 20vh;
 }
 
 .player-container {
-    background: lightseagreen;
-    height: 65vh;
+  background: lightseagreen;
+  height: 65vh;
 }
 
 .streakbar {
-    background: lightblue;
-    height: 10vh;
+  background: lightblue;
+  height: 10vh;
 }
 
 /* toolbar section */
 
 .settingsicon {
-    text-align: right;
+  text-align: right;
 }
 
-.settingstoggle:link, .settingstoggle:visited {
-    color: darkslategray;
+.settingstoggle:link,
+.settingstoggle:visited {
+  color: darkslategray;
 }
 
-.settingstoggle:hover, .settingstoggle:active {
-    text-align: right;
-    color: lightseagreen;
+.settingstoggle:hover,
+.settingstoggle:active {
+  text-align: right;
+  color: lightseagreen;
 }
 
 /* .quote section */
 
 .quoteheading {
-    font-style: bold;
+  font-style: bold;
 }
 
 .quotetext {
-    font-style: italic;
+  font-style: italic;
 }
 
 .author {
-    font-style: normal;
+  font-style: normal;
 }
 
 /* .player-container section */
+
+.playbutton {
+  font-size: 48px;
+  color: whitesmoke;
+}
+
 
 /* .streakbar section */
