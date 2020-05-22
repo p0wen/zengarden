@@ -27,6 +27,19 @@
 
 /* toolbar section */
 
+.settingsicon {
+    text-align: right;
+}
+
+.settingstoggle:link, .settingstoggle:visited {
+    color: darkslategray;
+}
+
+.settingstoggle:hover, .settingstoggle:active {
+    text-align: right;
+    color: lightseagreen;
+}
+
 /* .quote section */
 
 .quoteheading {
