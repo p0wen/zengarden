@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Zen Garden</title>
   </head>
 
@@ -45,7 +45,40 @@
         <div class="col">
           <div class="row">
             <div class="col">
-              <p>Play Pause Circle</p>
+              <img src="./media/img/play.svg" class="play">
+              <svg
+                class="track-outline"
+                width="453"
+                height="453"
+                viewBox="0 0 453 453"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="226.5"
+                  cy="226.5"
+                  r="216.5"
+                  stroke="white"
+                  stroke-width="20"
+                />
+              </svg>
+              <svg
+                class="moving-outline"
+                width="453"
+                height="453"
+                viewBox="0 0 453 453"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="226.5"
+                  cy="226.5"
+                  r="216.5"
+                  stroke="#018EBA"
+                  stroke-width="20"
+                />
+              </svg>
+              <img src="./media/img/pause.svg" class="pause">
             </div>
           </div>
           <div class="row">
@@ -88,16 +121,24 @@
             <div class="timersettings">
               <h5>Timer</h5>
               <div class="meditationtime">
-                <span>Meditation Time:</span><br>
+                <span>Meditation Time:</span><br />
                 <div
                   class="btn-group"
                   role="group"
                   aria-label="Meditation Timer"
                 >
-                  <button type="button" class="btn btn-light">5</button>
-                  <button type="button" class="btn btn-light">10</button>
-                  <button type="button" class="btn btn-light">15</button>
-                  <button type="button" class="btn btn-light">20</button>
+                  <button type="button" class="btn btn-light" data-time="300">
+                    5 Min.
+                  </button>
+                  <button type="button" class="btn btn-light" data-time="600">
+                    10 Min.
+                  </button>
+                  <button type="button" class="btn btn-light" data-time="900">
+                    15 Min.
+                  </button>
+                  <button type="button" class="btn btn-light" data-time="1200">
+                    20 Min.
+                  </button>
                 </div>
               </div>
               <div class="warmuptime"></div>
