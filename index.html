@@ -45,8 +45,9 @@
         <div class="col">
           <div class="row">
             <div class="col">
-              <i class="fas fa-play playbutton"></i>
-              <i class="fas fa-pause playbutton"></i>
+              <button type="button" class="starttimer">
+              <i class="fas fa-play"></i>
+              </button>
             </div>
           </div>
           <div class="row">
@@ -57,30 +58,11 @@
         </div>
       </div>
       <div class="row streakbar">
-        <div class="col meditationduration">
+        <div class="col ">
           <p>Streak</p>
-          <div
-                  class="btn-group"
-                  role="group"
-                  aria-label="Meditation Timer"
-                >
-                  <button type="button" class="btn btn-light" data-time="300">
-                    5 Min.
-                  </button>
-                  <button type="button" class="btn btn-light" data-time="600">
-                    10 Min.
-                  </button>
-                  <button type="button" class="btn btn-light" data-time="900">
-                    15 Min.
-                  </button>
-                  <button type="button" class="btn btn-light" data-time="1200">
-                    20 Min.
-                  </button> 
-        </div>
       </div>
     </div>
 
-    <!-- Settings Modal
     <div
       class="modal fade"
       id="settingsModal"
@@ -109,23 +91,24 @@
               <h5>Timer</h5>
               <div class="meditationtime">
                 <span>Meditation Time:</span><br />
-                <div
-                  class="btn-group"
-                  role="group"
-                  aria-label="Meditation Timer"
-                >
-                  <button type="button" class="btn btn-light" data-time="300">
-                    5 Min.
-                  </button>
-                  <button type="button" class="btn btn-light" data-time="600">
-                    10 Min.
-                  </button>
-                  <button type="button" class="btn btn-light" data-time="900">
-                    15 Min.
-                  </button>
-                  <button type="button" class="btn btn-light" data-time="1200">
-                    20 Min.
-                  </button>
+                    <div
+                    class="btn-group meditationduration"
+                    role="group"
+                    aria-label="Meditation Timer"
+                    >
+                        <button type="button" class="btn btn-light" data-time="300">
+                            5 Min.
+                        </button>
+                        <button type="button" class="btn btn-light" data-time="600">
+                            10 Min.
+                        </button>
+                        <button type="button" class="btn btn-light" data-time="900">
+                            15 Min.
+                        </button>
+                        <button type="button" class="btn btn-light" data-time="1200">
+                            20 Min.
+                        </button> 
+                    </div>
                 </div>
               </div>
               <div class="warmuptime"></div>
