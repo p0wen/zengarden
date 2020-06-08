@@ -49,6 +49,8 @@ meditationTime.forEach(option => {
     });
 });
 
+// Counting down the meditationduration (Solution based on https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown)
+
 let meditationtimer = setInterval(function () {
     if (meditationDuration <= 0){
         clearInterval(meditationtimer);
