@@ -42,17 +42,52 @@
         </div>
       </div>
       <div class="row player-container">
+        <div class="circle">
+          <svg
+            class="track-outline"
+            width=""
+            height="453"
+            viewBox="0 0 453 453"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="226.5"
+              cy="226.5"
+              r="216.5"
+              stroke="white"
+              stroke-width="20"
+            />
+          </svg>
+          <svg
+            class="moving-outline"
+            width="453"
+            height="453"
+            viewBox="0 0 453 453"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="226.5"
+              cy="226.5"
+              r="216.5"
+              stroke="#018EBA"
+              stroke-width="20"
+            />
+          </svg>
+        </div>
         <div class="col">
-          <div class="row">
-            <div class="col">
-              <button type="button" class="starttimer" data-status="stopped">
-                <i class="fas fa-play"></i>
-              </button>
+            <div class="row">
+              <div class="col">
+                <button type="button" class="starttimer" data-status="stopped">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <p class="meditationtime"></p>
+            <div class="row">
+              <div class="col">
+                <p class="meditationtime"></p>
+              </div>
             </div>
           </div>
         </div>
@@ -152,11 +187,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/f34e635ca2.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/f34e635ca2.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="assets/js/scripts/app.js"></script>
 
     <!-- Load Tests -->
     <script src="assets/js/specs/app.js"></script>
-    
   </body>
 </html>
