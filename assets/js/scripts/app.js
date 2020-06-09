@@ -33,30 +33,31 @@ fetch("https://type.fit/api/quotes")
  * display text "seize the day"
  * store successfully finished session to local storage
  */
-// Getting the HTML Element and declare meditation duration standard
+
+
 let meditationTimeElem = document.querySelector('.meditationtime') 
 let meditationDuration = 600;
 let meditationTimer;
-let meditationTime = document.querySelectorAll('.meditationduration button'); // Rename let to medTimeSetBtn
+let medTimeSetBtn = document.querySelectorAll('.meditationduration button'); 
 let startStopButton = document.querySelector('.starttimer');
 let startStopBtnIcon = startStopButton.querySelector("i");
+let timeLeft;
 
 init();
 
 // Updating the Meditation Duration based on settings‚
 
 function init() {
-    timerSettings()
-
+    timerSettings();
 }
 
 // Timer Settings
 
 function timerSettings () {
     meditationTimeElem.textContent = `${Math.floor(meditationDuration / 60)}:${Math.floor(meditationDuration % 60)}`;
-    meditationTime.forEach(option => {
+    medTimeSetBtn.forEach(option => {
     option.addEventListener("click", function() {
-        removeActive(meditationTime);
+        removeActive(medTimeSetBtn);
         meditationDuration = this.getAttribute("data-time");
         meditationTimeElem.innerHTML = `${Math.floor(meditationDuration /60)}:${Math.floor(meditationDuration % 60)}`;
         option.classList.add("active")
@@ -72,14 +73,14 @@ function controlTimer() {
         if (status === "stopped") {
             startTimer();
             this.dataSet.status = "playing";
-            startStopBtnIcon /klasse löschen und neue hinzufügen
-        } 
-        wenn stopped dannn
-        startTimer ausführen
-        button ändern
-        wenn play dann
-        stopTimer ausführen
-        button ändern
+            startStopBtnIcon.classList.remove("fa-play");
+            startStopBtnIcon.classList.add("fa-pause");
+        } else {
+            pauseTimer();
+            this.dataSet.status = "stopped";
+            startStopBtnIcon.classList.remove("fa-pause");
+            startStopBtnIcon.classList.add("fa-play");
+        }
     })
 }
 
@@ -106,7 +107,9 @@ function startTimer() {
 }
 
 function pauseTimer() {
-    
+    clearInterval(meditationTimer);
+    timeLeft = meditationDuration;
+    onTimeElem.innerHTML = `${Math.floor(timeLeft /60)}:${Math.floor(timeLeft % 60)}`
 }
 
 /** Build a Streak Recording for past 7 days
