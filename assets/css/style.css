@@ -80,27 +80,24 @@
 }
 
 .starttimer {
-  position: relative;
+  position: static;
   border: none;
   margin-left: 50%;
   background: none;
   font-size: 69px;
-  margin-top: 50%;
+  margin-top: 179px;
   color: whitesmoke;
   transform: translate(-50%, -50%);
 }
 
 timerselection {
-
 }
 
 .meditationtime {
-    color: white;
-    position: relative;
-    font-size: 50px;
-    bottom: auto;
+  color: white;
+  position: relative;
+  font-size: 50px;
+  bottom: auto;
 }
-
-
 
 /* .streakbar section */
