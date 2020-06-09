@@ -1,116 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Zen Garden</title>
-  </head>
 
-  <body>
-    <div class="app container-fluid">
-      <div class="row toolbar">
-        <div class="col-8 appname">
-          <p>Zen Garden</p>
-          <p></p>
-        </div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+	<link rel="stylesheet" href="./assets/css/style.css" />
+	<title>Zen Garden</title>
+</head>
 
-        <div class="col-4 settingsicon">
-          <a
-            class="settingstoggle"
-            href="#settingsModal"
-            data-toggle="modal"
-            data-target="#settingsModal"
-            ><span class="fas fa-cogs"></span
-          ></a>
-        </div>
-      </div>
-      <div class="row quote">
-        <div class="col">
-          <p class="quoteheading">Quote of the Day:</p>
-          <p class="quotetext"></p>
-          <p class="author"></p>
-        </div>
-      </div>
-      <div class="row player-container">
-        <div class="circle">
-          <svg
-            class="track-outline"
-            width=""
-            height="453"
-            viewBox="0 0 453 453"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="226.5"
-              cy="226.5"
-              r="216.5"
-              stroke="white"
-              stroke-width="20"
-            />
-          </svg>
-          <svg
-            class="moving-outline"
-            width="453"
-            height="453"
-            viewBox="0 0 453 453"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="226.5"
-              cy="226.5"
-              r="216.5"
-              stroke="#018EBA"
-              stroke-width="20"
-            />
-          </svg>
-        </div>
-        <div class="col">
-            <div class="row">
-              <div class="col">
-                <button type="button" class="starttimer" data-status="stopped">
+<body>
+	<div class="app container-fluid">
+		<div class="row toolbar">
+			<div class="col-8 appname">
+				<p>Zen Garden</p>
+				<p></p>
+			</div>
+
+			<div class="col-4 settingsicon">
+				<a class="settingstoggle" href="#settingsModal" data-toggle="modal"
+					data-target="#settingsModal"><span class="fas fa-cogs"></span></a>
+			</div>
+		</div>
+		<div class="row quote">
+			<div class="col">
+				<p class="quoteheading">Quote of the Day:</p>
+				<p class="quotetext"></p>
+				<p class="author"></p>
+			</div>
+		</div>
+		<div class="row player-container">
+			<div class="circle">
+				<svg class="track-outline" width="" height="453" viewBox="0 0 453 453" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<circle cx="226.5" cy="226.5" r="216.5" stroke="white" stroke-width="20" />
+				</svg>
+				<svg class="moving-outline" width="453" height="453" viewBox="0 0 453 453" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<circle cx="226.5" cy="226.5" r="216.5" stroke="#018EBA" stroke-width="20" />
+				</svg>
+			</div>
+			<div class="col">
+				<div class="row">
+					<div class="col">
+						<button type="button" class="starttimer" data-status="stopped">
                   <i class="fas fa-play"></i>
                 </button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <p class="meditationtime"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row streakbar">
-        <div class="col">
-          <p>Streak</p>
-        </div>
-      </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<p class="meditationtime"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row streakbar">
+		<div class="col">
+			<p>Streak</p>
+		</div>
+	</div>
 
-      <div
-        class="modal fade"
-        id="settingsModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="settingsModalLable"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="settingsModalLable">Settings</h5>
-              <button
+	<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLable"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="settingsModalLable">Settings</h5>
+					<button
                 type="button"
                 class="close"
                 data-dismiss="modal"
@@ -118,82 +79,97 @@
               >
                 <span aria-hidden="true">&times;</span>
               </button>
-            </div>
+				</div>
 
-            <div class="modal-body">
-              <div class="timersettings">
-                <h5>Timer</h5>
-                <div class="meditationtime">
-                  <span>Meditation Time:</span><br />
-                  <div
-                    class="btn-group meditationduration"
-                    role="group"
-                    aria-label="Meditation Timer"
-                  >
-                    <button type="button" class="btn btn-light" data-time="300">
-                      5 Min.
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-light active"
-                      data-time="600"
-                    >
-                      10 Min.
-                    </button>
-                    <button type="button" class="btn btn-light" data-time="900">
-                      15 Min.
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-light"
-                      data-time="1200"
-                    >
-                      20 Min.
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="warmuptime"></div>
-              <span>Warm-Up Time:</span>
-              <div class="cooldowntime"></div>
-              <span>Cool-Down Time:</span>
-            </div>
-            <div class="hr"></div>
-            <div class="soundsettings">
-              <div class="whitenoise"></div>
-              <div class="volume"></div>
-            </div>
-            <div class="backgroundsettings">
-              <div class="row">
-                <div class="col"></div>
-                <div class="col"></div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
+				<div class="modal-body">
+					<div class="timersettings">
+						<h5>Timer</h5>
+						<div class="timersettings meditationtime">
+							<span>Meditation Time:</span><br/>
+							<div class="btn-group meditationduration" role="group" aria-label="Meditation Timer">
+								<button type="button" class="btn btn-light" data-time="300">
+								    5 Min.
+								</button>
+								<button type="button" class="btn btn-light active" data-time="600">
+																								                      10 Min.
+																								                    </button>
+								<button type="button" class="btn btn-light" data-time="900">
+																								                      15 Min.
+																								                    </button>
+								<button type="button" class="btn btn-light" data-time="1200">
+																								                      20 Min.
+																								                    </button>
+							</div>
+						</div>
+					</div>
+					<div class="timersettingstion warmuptime">
+						<span>Warm-Up Time:</span>
+						<div class="btn-group warmupduration" role="group" aria-label="Warmup Timer">
+							<button type="button" class="btn btn-light" data-time="30">
+								                            30 Sec.
+								                            </button>
+							<button type="button" class="btn btn-light active" data-time="60">
+								                            1 Min.
+								                            </button>
+							<button type="button" class="btn btn-light" data-time="120">
+								                            2 Min.
+								                            </button>
+							<button type="button" class="btn btn-light" data-time="auto">
+								                            Auto
+								                            </button>
+						</div>
+					</div>
+					<div class="timersettings"></div>
+					<span>Cool-Down Time:</span>
+                    						<div class="btn-group warmupduration" role="group" aria-label="Warmup Timer">
+							<button type="button" class="btn btn-light" data-time="60">
+								                            1 Min.
+								                            </button>
+							<button type="button" class="btn btn-light active" data-time="120">
+								                            2 Min.
+								                            </button>
+							<button type="button" class="btn btn-light" data-time="180">
+								                            3 Min.
+								                            </button>
+							<button type="button" class="btn btn-light" data-time="auto">
+								                            Auto
+								                            </button>
+						</div>
+				</div>
+				<div class="hr"></div>
+				<div class="soundsettings">
+					<div class="whitenoise"></div>
+					<div class="volume"></div>
+				</div>
+				<div class="backgroundsettings">
+					<div class="row">
+						<div class="col"></div>
+						<div class="col"></div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal"
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Load Scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/f34e635ca2.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/js/scripts/app.js"></script>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- Load Scripts-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/f34e635ca2.js" crossorigin="anonymous"></script>
+	<script src="assets/js/scripts/app.js"></script>
 
-    <!-- Load Tests -->
-    <script src="assets/js/specs/app.js"></script>
-  </body>
+	<!-- Load Tests -->
+	<script src="assets/js/specs/app.js"></script>
+</body>
+
 </html>

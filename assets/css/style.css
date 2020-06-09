@@ -90,11 +90,17 @@
   transform: translate(-50%, -50%);
 }
 
+timerselection {
+
+}
+
 .meditationtime {
     color: white;
     position: relative;
     font-size: 50px;
     bottom: auto;
 }
+
+
 
 /* .streakbar section */
