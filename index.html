@@ -46,7 +46,7 @@
           <div class="row">
             <div class="col">
               <button type="button" class="starttimer" data-status="stopped">
-              <i class="fas fa-play"></i>
+                <i class="fas fa-play"></i>
               </button>
             </div>
           </div>
@@ -58,57 +58,64 @@
         </div>
       </div>
       <div class="row streakbar">
-        <div class="col ">
+        <div class="col">
           <p>Streak</p>
+        </div>
       </div>
-    </div>
 
-    <div
-      class="modal fade"
-      id="settingsModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="settingsModalLable"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="settingsModalLable">Settings</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
+      <div
+        class="modal fade"
+        id="settingsModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="settingsModalLable"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="settingsModalLable">Settings</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
 
-
-          <div class="modal-body">
-            <div class="timersettings">
-              <h5>Timer</h5>
-              <div class="meditationtime">
-                <span>Meditation Time:</span><br />
-                    <div
+            <div class="modal-body">
+              <div class="timersettings">
+                <h5>Timer</h5>
+                <div class="meditationtime">
+                  <span>Meditation Time:</span><br />
+                  <div
                     class="btn-group meditationduration"
                     role="group"
                     aria-label="Meditation Timer"
+                  >
+                    <button type="button" class="btn btn-light" data-time="300">
+                      5 Min.
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-light active"
+                      data-time="600"
                     >
-                        <button type="button" class="btn btn-light" data-time="300">
-                            5 Min.
-                        </button>
-                        <button type="button" class="btn btn-light active" data-time="600">
-                            10 Min.
-                        </button>
-                        <button type="button" class="btn btn-light" data-time="900">
-                            15 Min.
-                        </button>
-                        <button type="button" class="btn btn-light" data-time="1200">
-                            20 Min.
-                        </button> 
-                    </div>
+                      10 Min.
+                    </button>
+                    <button type="button" class="btn btn-light" data-time="900">
+                      15 Min.
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-light"
+                      data-time="1200"
+                    >
+                      20 Min.
+                    </button>
+                  </div>
                 </div>
               </div>
               <div class="warmuptime"></div>
@@ -141,18 +148,15 @@
         </div>
       </div>
     </div>
--->
     <!-- Load Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/f34e635ca2.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/f34e635ca2.js" crossorigin="anonymous"></script>
     <script src="assets/js/scripts/app.js"></script>
 
     <!-- Load Tests -->
     <script src="assets/js/specs/app.js"></script>
+    
   </body>
 </html>

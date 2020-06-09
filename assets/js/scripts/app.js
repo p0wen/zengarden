@@ -47,7 +47,7 @@ init();
 
 function init() {
   timerSettings();
-  controlTimer
+  controlTimer();
 }
 
 // Timer Settings
@@ -58,6 +58,7 @@ function timerSettings() {
   )}:${Math.floor(meditationDuration % 60)}`;
   medTimeSetBtn.forEach((option) => {
     option.addEventListener("click", function () {
+      pauseTimer();
       removeActive(medTimeSetBtn);
       meditationDuration = this.getAttribute("data-time");
       meditationTimeElem.innerHTML = `${Math.floor(
@@ -73,16 +74,18 @@ function timerSettings() {
 function controlTimer() {
   let status = startStopButton.getAttribute("data-status");
   startStopButton.addEventListener("click", function () {
-    if (status === "stopped") {
-      startTimer();
-      this.dataSet.status = "playing";
-      startStopBtnIcon.classList.remove("fa-play");
-      startStopBtnIcon.classList.add("fa-pause");
-    } else {
+    if (status === "playing") {
       pauseTimer();
-      this.dataSet.status = "stopped";
+      startStopButton.dataset.status = "stopped";
+      status = startStopButton.getAttribute("data-status");
       startStopBtnIcon.classList.remove("fa-pause");
       startStopBtnIcon.classList.add("fa-play");
+    } else {
+      startStopButton.dataset.status = "playing";
+      status = startStopButton.getAttribute("data-status");
+      startTimer();
+      startStopBtnIcon.classList.remove("fa-play");
+      startStopBtnIcon.classList.add("fa-pause");
     }
   });
 }
