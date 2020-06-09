@@ -58,10 +58,43 @@
 
 /* .player-container section */
 
-.playbutton {
-  font-size: 48px;
-  color: whitesmoke;
+.player-container {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
 }
 
+.player-container svg {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+}
+.player-container svg circle {
+  transition: all 0.2s ease-in-out;
+}
+
+.starttimer {
+  position: relative;
+  border: none;
+  margin-left: 50%;
+  background: none;
+  font-size: 69px;
+  margin-top: 50%;
+  color: whitesmoke;
+  transform: translate(-50%, -50%);
+}
+
+.meditationtime {
+    color: white;
+    position: relative;
+    font-size: 50px;
+    bottom: auto;
+}
 
 /* .streakbar section */
