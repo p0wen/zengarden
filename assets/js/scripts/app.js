@@ -37,7 +37,8 @@ const outline = document.querySelector(".moving-outline circle");
 const outlineLength = outline.getTotalLength();
 
 let meditationTimeElem = document.querySelector(".meditationtime");
-let meditationDuration = 600;
+let meditationDuration = 10;
+let meditationProgress = meditationDuration;
 let meditationTimer;
 let medTimeSetBtn = document.querySelectorAll(".meditationduration button");
 let startStopButton = document.querySelector(".starttimer");
@@ -75,6 +76,7 @@ function timerSettings() {
       removeActive(medTimeSetBtn);
       outline.style.strokeDashoffset = outlineLength;
       meditationDuration = this.getAttribute("data-time");
+      meditationProgress = meditationDuration;
       meditationTimeElem.innerHTML = `${Math.floor(
         meditationDuration / 60
       )}:${Math.floor(meditationDuration % 60)}`;
@@ -115,18 +117,25 @@ function removeActive(settingsTimer) {
 
 function startTimer() {
   meditationTimer = setInterval(function () {
-    if (meditationDuration <= 0) {
+    if (meditationProgress <= 0) {
+      progress =
+        outlineLength - (currentTime / meditationDuration) * outlineLength;
+      outline.style.strokeDashoffset = progress;
       clearInterval(meditationTimer);
       meditationTimeElem.innerHTML = `Seize the day!`;
     } else {
       progress =
         outlineLength - (currentTime / meditationDuration) * outlineLength;
       outline.style.strokeDashoffset = progress;
+      console.log(progress);
+      console.log(currentTime);
+      console.log(meditationProgress);
+      console.log(meditationTimer);
       meditationTimeElem.innerHTML = `${Math.floor(
-        meditationDuration / 60
-      )}:${Math.floor(meditationDuration % 60)}`;
+        meditationProgress / 60
+      )}:${Math.floor(meditationProgress % 60)}`;
     }
-    meditationDuration -= 1;
+    meditationProgress -= 1;
     currentTime += 1;
   }, 1000);
 }
@@ -134,7 +143,7 @@ function startTimer() {
 function stopTimer() {
   clearInterval(meditationTimer);
   currentTime = 0;
-  meditationDuration = 0;
+  meditationProgress = 0;
   progress = 0;
   status = startStopButton.dataset.status = "stopped";
   startStopButton.getAttribute("data-status");
@@ -143,7 +152,7 @@ function stopTimer() {
 }
 function pauseTimer() {
   clearInterval(meditationTimer);
-  timeLeft = meditationDuration;
+  timeLeft = meditationProgress;
   progressStatus = progress;
   meditationTimeElem.innerHTML = `${Math.floor(timeLeft / 60)}:${Math.floor(
     timeLeft % 60
