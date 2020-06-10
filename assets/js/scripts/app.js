@@ -33,6 +33,9 @@ fetch("https://type.fit/api/quotes")
  * store successfully finished session to local storage
  */
 
+const outline = document.querySelector(".moving-outline circle");
+const outlineLength = outline.getTotalLength();
+
 let meditationTimeElem = document.querySelector(".meditationtime");
 let meditationDuration = 600;
 let meditationTimer;
@@ -40,8 +43,18 @@ let medTimeSetBtn = document.querySelectorAll(".meditationduration button");
 let startStopButton = document.querySelector(".starttimer");
 let startStopBtnIcon = startStopButton.querySelector("i");
 let timeLeft;
+let currentTime = 0;
+let progress;
+let status = startStopButton.getAttribute("data-status");
 
 init();
+
+// Circle
+
+outline.style.strokeDasharray = outlineLength;
+outline.style.strokeDashoffset = outlineLength;
+
+function animateCircle() {}
 
 // Updating the Meditation Duration based on settings‚
 
@@ -58,8 +71,9 @@ function timerSettings() {
   )}:${Math.floor(meditationDuration % 60)}`;
   medTimeSetBtn.forEach((option) => {
     option.addEventListener("click", function () {
-      pauseTimer();
+      stopTimer();
       removeActive(medTimeSetBtn);
+      outline.style.strokeDashoffset = outlineLength;
       meditationDuration = this.getAttribute("data-time");
       meditationTimeElem.innerHTML = `${Math.floor(
         meditationDuration / 60
@@ -72,7 +86,6 @@ function timerSettings() {
 // Control Start Stop Button
 
 function controlTimer() {
-  let status = startStopButton.getAttribute("data-status");
   startStopButton.addEventListener("click", function () {
     if (status === "playing") {
       pauseTimer();
@@ -106,17 +119,32 @@ function startTimer() {
       clearInterval(meditationTimer);
       meditationTimeElem.innerHTML = `Seize the day!`;
     } else {
+      progress =
+        outlineLength - (currentTime / meditationDuration) * outlineLength;
+      outline.style.strokeDashoffset = progress;
       meditationTimeElem.innerHTML = `${Math.floor(
         meditationDuration / 60
       )}:${Math.floor(meditationDuration % 60)}`;
     }
     meditationDuration -= 1;
+    currentTime += 1;
   }, 1000);
 }
 
+function stopTimer() {
+  clearInterval(meditationTimer);
+  currentTime = 0;
+  meditationDuration = 0;
+  progress = 0;
+  status = startStopButton.dataset.status = "stopped";
+  startStopButton.getAttribute("data-status");
+  startStopBtnIcon.classList.remove("fa-pause");
+  startStopBtnIcon.classList.add("fa-play");
+}
 function pauseTimer() {
   clearInterval(meditationTimer);
   timeLeft = meditationDuration;
+  progressStatus = progress;
   meditationTimeElem.innerHTML = `${Math.floor(timeLeft / 60)}:${Math.floor(
     timeLeft % 60
   )}`;

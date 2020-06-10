@@ -48,23 +48,22 @@
 					<button type="button" class="starttimer" data-status="stopped">
                         <i class="fas fa-play"></i>
                     </button>
-                </div>
+				</div>
 			</div>
-            <div class="row">
-                <div class="col">
-                    <p class="meditationtime"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+			<div class="row">
+				<div class="col">
+					<p class="meditationtime"></p>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="row streakbar">
 		<div class="col">
 			<p>Streak</p>
 		</div>
 	</div>
-
-	<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLable" aria-hidden="true">
+	<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLable"
+		aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -113,63 +112,66 @@
 					</div>
 					<div class="timersettings"></div>
 					<span>Cool-Down Time:</span>
-                    	<div class="btn-group cooldownduration" role="group" aria-label="Cool Down Timer">
-							<button type="button" class="btn btn-light" data-time="60">
+					<div class="btn-group cooldownduration" role="group" aria-label="Cool Down Timer">
+						<button type="button" class="btn btn-light" data-time="60">
 								                            1 Min.
 								                            </button>
-							<button type="button" class="btn btn-light " data-time="120">
+						<button type="button" class="btn btn-light " data-time="120">
 								                            2 Min.
 								                            </button>
-							<button type="button" class="btn btn-light active" data-time="180">
+						<button type="button" class="btn btn-light active" data-time="180">
 								                            3 Min.
 								                            </button>
-							<button type="button" class="btn btn-light" data-time="auto">
+						<button type="button" class="btn btn-light" data-time="auto">
 								                            Auto
 								                            </button>
-						</div>
-				    <hr>
-                    <div class="soundsettings">
-                        <h5>Ambient Sounds</h5>
-                        <div class="row">
-					        <div class="col whitenoise">Whitenoise</div>
-                            <div class="col">
-                                <label class="switch">
+					</div>
+					<hr>
+					<div class="soundsettings">
+						<h5>Ambient Sounds</h5>
+						<div class="row">
+							<div class="col whitenoise">Whitenoise</div>
+							<div class="col">
+								<label class="switch">
                                     <input type="checkbox">
                                     <span class="slider round"></span>
                                 </label>
-                            </div>  
-                        </div>
-					    <div class="row volume slidecontainer">
-                            <div class="col">Volume</div>
-                            <div class="col">   
-                                <input type="range" min="1" max="100" value="50" class="volumeslider" id="myRange">
+							</div>
+						</div>
+						<div class="row volume slidecontainer">
+							<div class="col">Volume</div>
+							<div class="col">
+								<input type="range" min="1" max="100" value="50" class="volumeslider" id="myRange">
                             </div>
-                        </div>
-				    </div>
-                    <hr>
-				    <div class="backgroundsettings">
-                        <h5>Background</h5>
-					    <div class="row">
-						    <div class="col">Beach</div>
-						    <div class="col">Mountains</div>
-                            <div class="col">Random</div>
-                </div>
+							</div>
+						</div>
+						<hr>
+						<div class="backgroundsettings">
+							<h5>Background</h5>
+							<div class="row">
+								<div class="col">Beach</div>
+								<div class="col">Mountains</div>
+								<div class="col">Random</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
 				</div>
 			</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-	<!-- Load Scripts-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	<script src="https://kit.fontawesome.com/f34e635ca2.js" crossorigin="anonymous"></script>
-	<script src="assets/js/scripts/app.js"></script>
+		</div>
 
-	<!-- Load Tests -->
-	<script src="assets/js/specs/app.js"></script>
+		<!-- Load Scripts-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<script src="https://kit.fontawesome.com/f34e635ca2.js" crossorigin="anonymous"></script>
+		<script src="assets/js/scripts/app.js"></script>
+
+		<!-- Load Tests -->
+		<script src="assets/js/specs/app.js"></script>
 </body>
 
 </html>
