@@ -193,7 +193,6 @@ function pauseTimer() {
   )}`;
 }
 
-function completedSession() {}
 
 /** integrate ambient sound -- soundfile from https://www.edinburghrecords.com/free-sound-effects/ */
 
