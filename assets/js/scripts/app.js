@@ -143,6 +143,7 @@ function startTimer() {
         outlineLength - (currentTime / meditationDuration) * outlineLength;
       outline.style.strokeDashoffset = progress;
       clearInterval(meditationTimer);
+      soundManager.play('aSound')
       meditationTimeElem.innerHTML = `Seize the day!`;
       status = startStopButton.dataset.status = "complete";
       startStopButton.getAttribute("data-status");
@@ -192,23 +193,6 @@ function pauseTimer() {
     timeLeft % 60
   )}`;
 }
-
-
-/** Integrate SM2 API */
-
-soundManager.setup({
-  url: './swf/',
-  onready: function() {
-    var mySound = soundManager.createSound({
-      id: 'aSound',
-      url: '../media/sounds/startbell.mp3'
-    });
-    mySound.play();
-  },
-  ontimeout: function() {
-    // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
-  }
-});
 
 
 /** Build a Streak Recording for past 7 days
