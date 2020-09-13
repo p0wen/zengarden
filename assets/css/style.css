@@ -1,7 +1,7 @@
 /* Main Page */
 
 .toolbar {
-  background: lightcoral;
+  /* background: lightcoral; */
   height: 5vh;
 }
 .quote,
@@ -11,17 +11,17 @@
 }
 
 .quote {
-  background: lightsalmon;
+ /* background: lightsalmon; */
   height: 20vh;
 }
 
 .player-container {
-  background: lightseagreen;
+ /* background: lightseagreen; */
   height: 65vh;
 }
 
 .streakbar {
-  background: lightblue;
+/*  background: lightblue; */
   height: 10vh;
 }
 
