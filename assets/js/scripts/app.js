@@ -1,3 +1,17 @@
+// Use Background based on Time
+
+const currentHour = new Date().getHours();
+
+if (currentHour > 0 && currentHour < 12) {
+  // after Midnight and before 12:00PM
+  document.getElementById("myDiv").style.backgroundImage =
+    "url(../assets/media/img/sunrise.jpg)";
+} else if (currentHour >= 12) {
+  // after 12:00PM
+  document.getElementById("myDiv").style.backgroundImage =
+    "url('../assets/media/img/afternoon.jpg')";
+}
+
 // Accessing the Quotes - How to work with APIs based on this tutorial https://www.taniarascia.com/how-to-use-the-javascript-fetch-api-to-get-json-data
 let quote;
 let quoteTextElem = document.querySelector(".quotetext");
@@ -94,8 +108,15 @@ function controlTimer() {
       startStopButton.dataset.status = "stopped";
       status = startStopButton.getAttribute("data-status");
       startStopBtnIcon.classList.remove("fa-pause");
+      startStopBtnIcon.classList.add("fa-play")
+    } else if (status === "complete") {
+      startStopButton.dataset.status = "stopped";
+      status = startStopButton.getAttribute("data-status");
+      resetTimer();
+      startStopBtnIcon.classList.remove("fa-redo");
       startStopBtnIcon.classList.add("fa-play");
-    } else {
+    }
+    else {
       startStopButton.dataset.status = "playing";
       status = startStopButton.getAttribute("data-status");
       startTimer();
@@ -123,6 +144,10 @@ function startTimer() {
       outline.style.strokeDashoffset = progress;
       clearInterval(meditationTimer);
       meditationTimeElem.innerHTML = `Seize the day!`;
+      status = startStopButton.dataset.status = "complete";
+      startStopButton.getAttribute("data-status");
+      startStopBtnIcon.classList.remove("fa-pause");
+      startStopBtnIcon.classList.add("fa-redo");
     } else {
       progress =
         outlineLength - (currentTime / meditationDuration) * outlineLength;
@@ -134,9 +159,9 @@ function startTimer() {
       meditationTimeElem.innerHTML = `${Math.floor(
         meditationProgress / 60
       )}:${Math.floor(meditationProgress % 60)}`;
+      meditationProgress -= 1;
+      currentTime += 1;
     }
-    meditationProgress -= 1;
-    currentTime += 1;
   }, 1000);
 }
 
@@ -150,6 +175,15 @@ function stopTimer() {
   startStopBtnIcon.classList.remove("fa-pause");
   startStopBtnIcon.classList.add("fa-play");
 }
+
+function resetTimer() {
+  currentTime = 0;
+  meditationProgress = meditationDuration;
+  progress = 0;
+  outline.style.strokeDashoffset = outlineLength
+  timerSettings();
+}
+
 function pauseTimer() {
   clearInterval(meditationTimer);
   timeLeft = meditationProgress;
@@ -159,12 +193,22 @@ function pauseTimer() {
   )}`;
 }
 
+function completedSession() {}
+
+/** integrate ambient sound -- soundfile from https://www.edinburghrecords.com/free-sound-effects/ */
+
 /** Build a Streak Recording for past 7 days
+ * look what day is today
  * Look if meditation was done yesterday
  * if yes
- * check date before yesterday
- * if yes check the day before yesterday
- * if no clear local storage
- * mark square with an "x"
- * if 7 days in a row State "You are on a roll" & clear for the next week
+ *      look up amount of streaks
+ *      loop through amounts of streak
+ *          set checkmark for each
+ * if not
+ *  reset streak amount
+ *  reset dateLastDone
+ * if streak = 7
+ *  display popup State "You are on a roll"
+ *  reset streak amount
+ *  reset dateLastDone
  */
