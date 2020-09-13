@@ -194,7 +194,22 @@ function pauseTimer() {
 }
 
 
-/** integrate ambient sound -- soundfile from https://www.edinburghrecords.com/free-sound-effects/ */
+/** Integrate SM2 API */
+
+soundManager.setup({
+  url: './swf/',
+  onready: function() {
+    var mySound = soundManager.createSound({
+      id: 'aSound',
+      url: '../media/sounds/startbell.mp3'
+    });
+    mySound.play();
+  },
+  ontimeout: function() {
+    // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
+  }
+});
+
 
 /** Build a Streak Recording for past 7 days
  * look what day is today
