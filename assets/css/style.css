@@ -19,6 +19,7 @@
   /* background: lightcoral; */
   height: 5vh;
 }
+
 .quote,
 .player-container,
 .streakbar {
@@ -48,7 +49,7 @@
 
 .settingstoggle:link,
 .settingstoggle:visited {
-  color: darkslategray;
+  color: (0, 0, 0, 0.1);
 }
 
 .settingstoggle:hover,
