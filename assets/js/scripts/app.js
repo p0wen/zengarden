@@ -12,6 +12,46 @@ if (currentHour > 0 && currentHour < 12) {
     "url('../assets/media/img/afternoon.jpg')";
 }
 
+//get today's date for all kinds of function
+let currDate = new Date();
+let currYear = currDate.getFullYear();
+let currMonth = currDate.getMonth() + 1;
+let dateLastDone = new Date();
+currDate.setHours(0, 0, 0, 0);
+
+if (currMonth < 10) {
+  currMonth = "0" + currMonth;
+}
+
+var currDay = currDate.getDate();
+
+if (currDay < 10) {
+  currDay = "0" + currDay;
+}
+
+var todayDate = currYear + "-" + currMonth + "-" + currDay;
+
+var oneDayAgo = new Date();
+oneDayAgo.setDate(oneDayAgo.getDate() - 1);
+oneDayAgo.setHours(0, 0, 0, 0);
+
+// generate current streakBar based on localStorage
+let streakBar = document.querySelector(".streak");
+let yourStreak = parseInt(localStorage.getItem("yourStreak"));
+let streakBarDummy = "";
+let sevenDayStreak = 7;
+
+for (var i = 0; i < sevenDayStreak; i++) {
+  if (yourStreak > 0) {
+    streakBarDummy += '<i class="far fa-check-square"></i>';
+    yourStreak -= 1;
+  } else {
+    streakBarDummy += '<i class="far fa-square"></i>';
+  }
+}
+// Using innerHTML without += to increase DOM Performances
+streakBar.innerHTML = streakBarDummy;
+
 // Accessing the Quotes - How to work with APIs based on this tutorial https://www.taniarascia.com/how-to-use-the-javascript-fetch-api-to-get-json-data
 let quote;
 let quoteTextElem = document.querySelector(".quotetext");
@@ -108,15 +148,14 @@ function controlTimer() {
       startStopButton.dataset.status = "stopped";
       status = startStopButton.getAttribute("data-status");
       startStopBtnIcon.classList.remove("fa-pause");
-      startStopBtnIcon.classList.add("fa-play")
+      startStopBtnIcon.classList.add("fa-play");
     } else if (status === "complete") {
       startStopButton.dataset.status = "stopped";
       status = startStopButton.getAttribute("data-status");
       resetTimer();
       startStopBtnIcon.classList.remove("fa-redo");
       startStopBtnIcon.classList.add("fa-play");
-    }
-    else {
+    } else {
       startStopButton.dataset.status = "playing";
       status = startStopButton.getAttribute("data-status");
       startTimer();
@@ -143,7 +182,8 @@ function startTimer() {
         outlineLength - (currentTime / meditationDuration) * outlineLength;
       outline.style.strokeDashoffset = progress;
       clearInterval(meditationTimer);
-      soundManager.play('aSound')
+      soundManager.play("aSound");
+      doTheThing();
       meditationTimeElem.innerHTML = `Seize the day!`;
       status = startStopButton.dataset.status = "complete";
       startStopButton.getAttribute("data-status");
@@ -181,7 +221,7 @@ function resetTimer() {
   currentTime = 0;
   meditationProgress = meditationDuration;
   progress = 0;
-  outline.style.strokeDashoffset = outlineLength
+  outline.style.strokeDashoffset = outlineLength;
   timerSettings();
 }
 
@@ -194,8 +234,7 @@ function pauseTimer() {
   )}`;
 }
 
-
-/** Build a Streak Recording for past 7 days
+/** Build a Streak Recording for past 7 days Inspiration by https://github.com/sanspoint/justdothething
  * look what day is today
  * Look if meditation was done yesterday
  * if yes
@@ -210,3 +249,66 @@ function pauseTimer() {
  *  reset streak amount
  *  reset dateLastDone
  */
+
+//Set streak (days completed) by converting locally stored value to Int
+var streak = parseInt(localStorage.getItem("yourStreak"));
+if (isNaN(streak)) {
+  streak = 0;
+}
+
+//Sets a date value for the last day completed in, or marks it as Never.
+if (!localStorage.getItem("dateLastDone")) {
+  lastDone = "Never";
+} else {
+  dateLastDone = parseDate(localStorage.getItem("dateLastDone"));
+}
+
+// parse a date in yyyy-mm-dd format
+function parseDate(input) {
+  var parts = input.match(/(\d+)/g);
+  // new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
+  return new Date(parts[0], parts[1] - 1, parts[2]); // months are 0-based
+}
+
+function doTheThing() {
+  localStorage.setItem("dateLastDone", todayDate);
+  if (todayDate != dateLastDone) {
+    streak++;
+    updateStreakData(streak);
+  }
+}
+
+function checkStreak() {
+  if (dateLastDone != oneDayAgo) {
+    streakReset();
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function streakReset() {
+  localStorage.removeItem("dateLastDone");
+  localStorage.removeItem("yourStreak");
+  streak = 0;
+  lastDone = "";
+  dateLastDone = "";
+  updateStreakData();
+}
+
+function updateStreakData(streak) {
+  yourStreak = streak;
+  streakBarDummy = "";
+  for (var i = 0; i < sevenDayStreak; i++) {
+    if (yourStreak > 0) {
+      streakBarDummy += '<i class="far fa-check-square"></i>';
+      yourStreak -= 1;
+    } else {
+      streakBarDummy += '<i class="far fa-square"></i>';
+    }
+  }
+  // Using innerHTML without += to increase DOM Performance
+  streakBar.innerHTML = streakBarDummy;
+
+  localStorage.setItem("yourStreak", streak.toString());
+}
