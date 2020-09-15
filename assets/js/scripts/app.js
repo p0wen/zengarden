@@ -183,7 +183,7 @@ function startTimer() {
       outline.style.strokeDashoffset = progress;
       clearInterval(meditationTimer);
       soundManager.play("aSound");
-      doTheThing();
+      mediStreak();
       meditationTimeElem.innerHTML = `Seize the day!`;
       status = startStopButton.dataset.status = "complete";
       startStopButton.getAttribute("data-status");
@@ -258,7 +258,7 @@ if (isNaN(streak)) {
 
 //Sets a date value for the last day completed in, or marks it as Never.
 if (!localStorage.getItem("dateLastDone")) {
-  lastDone = "Never";
+  dateLastDone = "Never";
 } else {
   dateLastDone = parseDate(localStorage.getItem("dateLastDone"));
 }
@@ -270,19 +270,37 @@ function parseDate(input) {
   return new Date(parts[0], parts[1] - 1, parts[2]); // months are 0-based
 }
 
-function doTheThing() {
+function mediStreak() {
   localStorage.setItem("dateLastDone", todayDate);
-  if (todayDate != dateLastDone) {
-    streak++;
+  if (streak == 6) {
+    showCongratzPopup();
+    streakReset();
+  }
+  else if (streak == 0) {
+    streak += 1;
     updateStreakData(streak);
+    dateLastDone = localStorage.getItem("dateLastDone", todayDate);
+  }
+  else if (streak > 0 && dateLastDone == oneDayAgo) {
+    streak += 1;
+    updateStreakData(streak);
+    dateLastDone = localStorage.getItem("dateLastDone", todayDate);
+  }
+  else if (streak > 0 && dateLastDone == todayDate) {
+    updateStreakData(streak);
+  }
+  else {
+      checkStreak();
   }
 }
 
 function checkStreak() {
-  if (dateLastDone != oneDayAgo) {
+  if (dateLastDone != oneDayAgo && dateLastDone != todayDate) {
+      console.log("seems you didnt make it")
     streakReset();
     return false;
   } else {
+      console.log("you are on a run")
     return true;
   }
 }
@@ -293,6 +311,7 @@ function streakReset() {
   streak = 0;
   lastDone = "";
   dateLastDone = "";
+  todayDate = "";
   updateStreakData();
 }
 
@@ -309,6 +328,10 @@ function updateStreakData(streak) {
   }
   // Using innerHTML without += to increase DOM Performance
   streakBar.innerHTML = streakBarDummy;
-
   localStorage.setItem("yourStreak", streak.toString());
+}
+
+function showCongratzPopup() {
+    this.successModal = $('#streak-success');
+    this.successModal.modal('show');
 }
