@@ -31,9 +31,7 @@ if (currDay < 10) {
 
 var todayDate = currYear + "-" + currMonth + "-" + currDay;
 
-var oneDayAgo = new Date();
-oneDayAgo.setDate(oneDayAgo.getDate() - 1);
-oneDayAgo.setHours(0, 0, 0, 0);
+var oneDayAgo = currYear + "-" + currMonth + "-" + (currDay - 1);
 
 // generate current streakBar based on localStorage
 let streakBar = document.querySelector(".streak");
@@ -183,12 +181,12 @@ function startTimer() {
       outline.style.strokeDashoffset = progress;
       clearInterval(meditationTimer);
       soundManager.play("aSound");
-      mediStreak();
       meditationTimeElem.innerHTML = `Seize the day!`;
       status = startStopButton.dataset.status = "complete";
       startStopButton.getAttribute("data-status");
       startStopBtnIcon.classList.remove("fa-pause");
       startStopBtnIcon.classList.add("fa-redo");
+      mediStreak();
     } else {
       progress =
         outlineLength - (currentTime / meditationDuration) * outlineLength;
@@ -260,41 +258,42 @@ if (isNaN(streak)) {
 if (!localStorage.getItem("dateLastDone")) {
   dateLastDone = "Never";
 } else {
-  dateLastDone = parseDate(localStorage.getItem("dateLastDone"));
-}
-
-// parse a date in yyyy-mm-dd format
-function parseDate(input) {
-  var parts = input.match(/(\d+)/g);
-  // new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
-  return new Date(parts[0], parts[1] - 1, parts[2]); // months are 0-based
+  dateLastDone = localStorage.getItem("dateLastDone");
 }
 
 function mediStreak() {
   localStorage.setItem("dateLastDone", todayDate);
   if (streak == 6) {
+    streak += 1;
+    console.log("Congratz")
     showCongratzPopup();
     streakReset();
   }
-  else if (streak == 0) {
+  else if (streak === 0) {
+    console.log("you did it the first time")
     streak += 1;
     updateStreakData(streak);
     dateLastDone = localStorage.getItem("dateLastDone", todayDate);
   }
   else if (streak > 0 && dateLastDone == oneDayAgo) {
+      console.log("you are getting there")
     streak += 1;
     updateStreakData(streak);
     dateLastDone = localStorage.getItem("dateLastDone", todayDate);
   }
   else if (streak > 0 && dateLastDone == todayDate) {
+            console.log("you already did it today")
     updateStreakData(streak);
   }
-  else {
-      checkStreak();
-  }
+  else (
+      checkStreak()
+  )
 }
 
 function checkStreak() {
+    console.log("dateLastDone:", dateLastDone)
+    console.log("oneDayAgo:", oneDayAgo)
+    console.log(todayDate)
   if (dateLastDone != oneDayAgo && dateLastDone != todayDate) {
       console.log("seems you didnt make it")
     streakReset();
@@ -335,3 +334,4 @@ function showCongratzPopup() {
     this.successModal = $('#streak-success');
     this.successModal.modal('show');
 }
+
