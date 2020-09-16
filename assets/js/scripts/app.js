@@ -172,21 +172,31 @@ function removeActive(settingsTimer) {
 }
 
 // Counting down the meditationduration (Solution based on https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown)
+let startSoundPlayed = false;
+
+function playStartSound() {
+    if (!startSoundPlayed) {
+              soundManager.play("startSound");
+              startSoundPlayed = true;
+    };
+}
 
 function startTimer() {
+  playStartSound()
   meditationTimer = setInterval(function () {
     if (meditationProgress <= 0) {
       progress =
         outlineLength - (currentTime / meditationDuration) * outlineLength;
       outline.style.strokeDashoffset = progress;
       clearInterval(meditationTimer);
-      soundManager.play("aSound");
+      soundManager.play("endSound");
       meditationTimeElem.innerHTML = `Seize the day!`;
       status = startStopButton.dataset.status = "complete";
       startStopButton.getAttribute("data-status");
       startStopBtnIcon.classList.remove("fa-pause");
       startStopBtnIcon.classList.add("fa-redo");
       mediStreak();
+      startSoundPlayed = false;
     } else {
       progress =
         outlineLength - (currentTime / meditationDuration) * outlineLength;
@@ -328,10 +338,23 @@ function updateStreakData(streak) {
   // Using innerHTML without += to increase DOM Performance
   streakBar.innerHTML = streakBarDummy;
   localStorage.setItem("yourStreak", streak.toString());
-}
+};
 
 function showCongratzPopup() {
     this.successModal = $('#streak-success');
     this.successModal.modal('show');
-}
+};
 
+function ambientSound(){
+    var isChecked = document.getElementById("ambiSound").checked;
+    console.log(isChecked)
+   if(isChecked){
+     soundManager.play('ambientSound');
+     console.log("Audio is resumed");
+   } else {
+     soundManager.pause('ambientSound');
+     console.log("Audio is stopped");
+   }
+};
+
+/** problem playing multiple sounds at once - possible solution hidden in here https://blog.cotten.io/playing-audio-resources-simultaneously-in-javascript-546ec4d6216a  */

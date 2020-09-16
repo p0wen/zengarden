@@ -131,7 +131,7 @@
 							<div class="col whitenoise">Whitenoise</div>
 							<div class="col">
 								<label class="switch">
-                    <input type="checkbox" />
+                    <input type="checkbox" id="ambiSound" onclick="ambientSound()"/>
                     <span class="slider round"></span>
                   </label>
 							</div>
@@ -198,15 +198,29 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 		<script src="https://kit.fontawesome.com/f34e635ca2.js" crossorigin="anonymous"></script>
 		<script src="assets/js/scripts/app.js"></script>
-		<script src="assets/js/sm2/soundmanager2.js"></script>
+		<script src="assets/js/soundmanager2/script/soundmanager2.js"></script>
 		<script>
 			soundManager.setup({
-        url: "./swf/",
+        url: "/assets/js/soundmanager2/swf/",
         onready: function () {
-          var mySound = soundManager.createSound({
-            id: "aSound",
-            url: "/media/sounds/startbell.mp3",
-          });
+          let endbell = soundManager.createSound({
+            id: "endSound",
+            url: "/assets/media/sounds/endbell.wav",
+            volume: 70,
+          })
+          let startbell = soundManager.createSound({
+            id: "startSound",
+            url: "/assets/media/sounds/startbell.mp3",
+            volume: 70,
+          })
+         let ambientSound = soundManager.createSound({
+            id: "ambientSound",
+            url: "/assets/media/sounds/ambientsound.wav",
+            volume: 50,
+            autoplay: true,
+            loops: true,
+          })
+          ;
         },
         ontimeout: function () {
           // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
