@@ -175,14 +175,14 @@ function removeActive(settingsTimer) {
 let startSoundPlayed = false;
 
 function playStartSound() {
-    if (!startSoundPlayed) {
-              soundManager.play("startSound");
-              startSoundPlayed = true;
-    };
+  if (!startSoundPlayed) {
+    soundManager.play("startSound");
+    startSoundPlayed = true;
+  }
 }
 
 function startTimer() {
-  playStartSound()
+  playStartSound();
   meditationTimer = setInterval(function () {
     if (meditationProgress <= 0) {
       progress =
@@ -275,41 +275,35 @@ function mediStreak() {
   localStorage.setItem("dateLastDone", todayDate);
   if (streak == 6) {
     streak += 1;
-    console.log("Congratz")
+    console.log("Congratz");
     showCongratzPopup();
     streakReset();
-  }
-  else if (streak === 0) {
-    console.log("you did it the first time")
+  } else if (streak === 0) {
+    console.log("you did it the first time");
     streak += 1;
     updateStreakData(streak);
     dateLastDone = localStorage.getItem("dateLastDone", todayDate);
-  }
-  else if (streak > 0 && dateLastDone == oneDayAgo) {
-      console.log("you are getting there")
+  } else if (streak > 0 && dateLastDone == oneDayAgo) {
+    console.log("you are getting there");
     streak += 1;
     updateStreakData(streak);
     dateLastDone = localStorage.getItem("dateLastDone", todayDate);
-  }
-  else if (streak > 0 && dateLastDone == todayDate) {
-            console.log("you already did it today")
+  } else if (streak > 0 && dateLastDone == todayDate) {
+    console.log("you already did it today");
     updateStreakData(streak);
-  }
-  else (
-      checkStreak()
-  )
+  } else checkStreak();
 }
 
 function checkStreak() {
-    console.log("dateLastDone:", dateLastDone)
-    console.log("oneDayAgo:", oneDayAgo)
-    console.log(todayDate)
+  console.log("dateLastDone:", dateLastDone);
+  console.log("oneDayAgo:", oneDayAgo);
+  console.log(todayDate);
   if (dateLastDone != oneDayAgo && dateLastDone != todayDate) {
-      console.log("seems you didnt make it")
+    console.log("seems you didnt make it");
     streakReset();
     return false;
   } else {
-      console.log("you are on a run")
+    console.log("you are on a run");
     return true;
   }
 }
@@ -338,23 +332,23 @@ function updateStreakData(streak) {
   // Using innerHTML without += to increase DOM Performance
   streakBar.innerHTML = streakBarDummy;
   localStorage.setItem("yourStreak", streak.toString());
-};
+}
 
 function showCongratzPopup() {
-    this.successModal = $('#streak-success');
-    this.successModal.modal('show');
-};
+  this.successModal = $("#streak-success");
+  this.successModal.modal("show");
+}
 
-function ambientSound(){
-    var isChecked = document.getElementById("ambiSound").checked;
-    console.log(isChecked)
-   if(isChecked){
-     soundManager.play('ambientSound');
-     console.log("Audio is resumed");
-   } else {
-     soundManager.pause('ambientSound');
-     console.log("Audio is stopped");
-   }
-};
+function ambientSound() {
+  var isChecked = document.getElementById("ambiSound").checked;
+  console.log(isChecked);
+  if (isChecked) {
+    soundManager.play("ambientSound");
+    console.log("Audio is resumed");
+  } else {
+    soundManager.pause("ambientSound");
+    console.log("Audio is stopped");
+  }
+}
 
 /** problem playing multiple sounds at once - possible solution hidden in here https://blog.cotten.io/playing-audio-resources-simultaneously-in-javascript-546ec4d6216a  */
