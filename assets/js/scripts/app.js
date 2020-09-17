@@ -1,4 +1,4 @@
-// Use Background based on Time
+// Use Background based on Time or Settings
 
 const currentHour = new Date().getHours();
 
@@ -10,6 +10,29 @@ if (currentHour > 0 && currentHour < 12) {
   // after 12:00PM
   document.getElementById("myDiv").style.backgroundImage =
     "url('../assets/media/img/afternoon.jpg')";
+}
+
+let changeBackgroundBTN = document.querySelectorAll(".changebackground button");
+
+function changeBackground() {
+    let bgimage = "";
+    changeBackgroundBTN.forEach((option) => {
+    option.addEventListener("click", function () {
+      bgimage = this.getAttribute("background-img");
+        if (bgimage == "morning") {
+        // Use Morning Background
+          document.getElementById("myDiv").style.backgroundImage = "url(../assets/media/img/sunrise.jpg)";
+        }
+        else if (bgimage == "afternoon") {
+        // after 12:00PM
+        document.getElementById("myDiv").style.backgroundImage = "url('../assets/media/img/afternoon.jpg')";
+        }
+        else if (bgimage == "random") {
+        // use random background from unsplash
+            setrandombg();
+        };
+    });
+});
 }
 
 //get today's date for all kinds of function
@@ -114,6 +137,7 @@ function animateCircle() {}
 function init() {
   timerSettings();
   controlTimer();
+  changeBackground();
 }
 
 // Timer Settings
