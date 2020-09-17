@@ -29,11 +29,11 @@ function changeBackground() {
         }
         else if (bgimage == "random") {
         // use random background from unsplash
-            setrandombg();
+         document.getElementById("myDiv").style.backgroundImage = "url('https://source.unsplash.com/random/1600x800')"
         };
     });
 });
-}
+}   
 
 //get today's date for all kinds of function
 let currDate = new Date();
