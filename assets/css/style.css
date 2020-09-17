@@ -23,12 +23,19 @@
   text-align: center;
 }
 
+.appname, .settingsicon {
+    color: #353535;
+}
+
 .quote {
  /* background: lightsalmon; */
   height: 20vh;
   font-size: 1.3rem;
 }
 
+.greyfilter {
+    background: #343a4038;
+}
 .player-container {
  /* background: lightseagreen; */
   height: 65vh;
@@ -42,6 +49,9 @@
 }
 
 /* toolbar section */
+.fa-wind {
+    color: #ff6000
+}
 
 .settingsicon {
   text-align: right;
@@ -49,13 +59,13 @@
 
 .settingstoggle:link,
 .settingstoggle:visited {
-  color: (0, 0, 0, 0.1);
+  color: #ff6000;
 }
 
 .settingstoggle:hover,
 .settingstoggle:active {
   text-align: right;
-  color: lightseagreen;
+  color: #353535;
 }
 
 /* .quote section */
