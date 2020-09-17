@@ -339,7 +339,7 @@ function showCongratzPopup() {
   this.successModal.modal("show");
 }
 
-function ambientSound() {
+function controlAmbientSound() {
   var isChecked = document.getElementById("ambiSound").checked;
   console.log(isChecked);
   if (isChecked) {
@@ -351,4 +351,9 @@ function ambientSound() {
   }
 }
 
-/** problem playing multiple sounds at once - possible solution hidden in here https://blog.cotten.io/playing-audio-resources-simultaneously-in-javascript-546ec4d6216a  */
+/** Update Sound Volume **/ 
+
+function updateVolume() {
+    let volume = document.getElementById("myRange").value;
+    soundManager.setVolume('ambientSound', volume);
+}
