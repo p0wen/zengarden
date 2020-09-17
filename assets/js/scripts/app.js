@@ -34,7 +34,7 @@ var todayDate = currYear + "-" + currMonth + "-" + currDay;
 var oneDayAgo = currYear + "-" + currMonth + "-" + (currDay - 1);
 
 // generate current streakBar based on localStorage
-let streakBar = document.querySelector(".streak");
+let streakBar = document.getElementById('streakbar');
 let yourStreak = parseInt(localStorage.getItem("yourStreak"));
 let streakBarDummy = "";
 let sevenDayStreak = 7;

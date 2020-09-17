@@ -26,6 +26,7 @@
 .quote {
  /* background: lightsalmon; */
   height: 20vh;
+  font-size: 1.3rem;
 }
 
 .player-container {
@@ -33,9 +34,11 @@
   height: 65vh;
 }
 
-.streakbar {
-/*  background: lightblue; */
-  height: 10vh;
+.streak {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 /* toolbar section */
@@ -116,8 +119,9 @@ timerselection {
 
 /* .streakbar section */
 
-.streak, .streakbar{
+.streakbar{
     margin-bottom: 0rem;
+    height: 10vh;
 }
 /* Toggle for Sound https://www.w3schools.com/howto/howto_css_switch.asp */
 
@@ -182,4 +186,22 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/* Background Settings */
+
+.backgroundicon {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 2.5rem;
+}
+
+.backgroundtext {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 1.2rem;
 }
