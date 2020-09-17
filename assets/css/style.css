@@ -116,10 +116,6 @@
   transform: translate(-50%, -50%);
 }
 
-timerselection {
-
-}
-
 .meditationtime {
   color: white;
   position: relative;
@@ -198,6 +194,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+
 /* Background Settings */
 
 .backgroundicon {
@@ -214,4 +211,17 @@ input:checked + .slider:before {
     margin-right: auto;
     display: block;
     font-size: 1.2rem;
+}
+
+/* Modal Background Switch Button */
+
+.btng {
+  background-color: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+.btng:hover {
+  color:#ff6000;
 }
