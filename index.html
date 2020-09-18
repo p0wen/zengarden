@@ -8,7 +8,7 @@
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-	<link rel="stylesheet" href="./assets/css/style.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
 	<title>Zen Garden</title>
 </head>
 
@@ -64,8 +64,7 @@
 			</div>
 		</div>
 	</div>
-	</div>
-	</div>
+
 
 	<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLable"
 		aria-hidden="true">
@@ -134,7 +133,7 @@
 							<div class="col whitenoise">Whitenoise</div>
 							<div class="col">
 								<label class="switch">
-                    <input type="checkbox" id="ambiSound" onclick="controlAmbientSound()"/>
+                    <input type="checkbox" id="ambiSound" onclick="controlAmbientSound()" checked />
                     <span class="slider round"></span>
                   </label>
 							</div>
@@ -159,19 +158,19 @@
 							<div class="row">
 								<div class="col">
 									<div class="row backgroundicon">
-                                    <button type="button" class="btng" background-img="morning"><i class="fas fa-sun" aria-hidden="true"></i>
+                                    <button type="button" class="btng" background-img="morning"><i class="fas fa-sun" aria-hidden="true"></i></button>
 									</div>
 									<div class="row backgroundtext">Morning</div>
 								</div>
 								<div class="col">
 									<div class="row backgroundicon">
-                                    <button type="button" class="btng" background-img="afternoon"><i class="fas fa-moon" aria-hidden="true"></i>
+                                    <button type="button" class="btng" background-img="afternoon"><i class="fas fa-moon" aria-hidden="true"></i></button>
 									</div>
 									<div class="row backgroundtext">Afternoon</div>
 								</div>
 								<div class="col">
 									<div class="row backgroundicon">
-                                    <button type="button" class="btng" background-img="random"><i class="fas fa-random" aria-hidden="true"></i>
+                                    <button type="button" class="btng" background-img="random"><i class="fas fa-random" aria-hidden="true"></i></button>
 									</div>
 									<div class="row backgroundtext">Random</div>
 								</div>
@@ -210,26 +209,25 @@
 		<script src="assets/js/soundmanager2/script/soundmanager2.js"></script>
 		<script>
 			soundManager.setup({
-        url: "/assets/js/soundmanager2/swf/",
+        url: "assets/js/soundmanager2/swf/",
         onready: function () {
-          let endbell = soundManager.createSound({
+        var endbell = soundManager.createSound({
             id: "endSound",
-            url: "/assets/media/sounds/endbell.wav",
+            url: "assets/media/sounds/endbell.wav",
             volume: 70,
-          })
-          let startbell = soundManager.createSound({
+            });
+        var startbell = soundManager.createSound({
             id: "startSound",
-            url: "/assets/media/sounds/startbell.mp3",
+            url: "assets/media/sounds/startbell.mp3",
             volume: 70,
-          })
-         let ambientSound = soundManager.createSound({
+            });
+        soundManager.createSound({
             id: "ambientSound",
-            url: "/assets/media/sounds/ambientsound.wav",
+            url: "assets/media/sounds/ambientsound.wav",
             volume: 50,
             autoPlay: true,
             loops: 10000,
-          })
-          ;
+            });
         },
         ontimeout: function () {
           // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?

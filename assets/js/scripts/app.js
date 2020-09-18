@@ -5,7 +5,7 @@ const currentHour = new Date().getHours();
 if (currentHour > 0 && currentHour < 12) {
   // after Midnight and before 12:00PM
   document.getElementById("myDiv").style.backgroundImage =
-    "url(../assets/media/img/sunrise.jpg)";
+    "url('../assets/media/img/sunrise.jpg')";
 } else if (currentHour >= 12) {
   // after 12:00PM
   document.getElementById("myDiv").style.backgroundImage =
@@ -21,7 +21,7 @@ function changeBackground() {
       bgimage = this.getAttribute("background-img");
         if (bgimage == "morning") {
         // Use Morning Background
-          document.getElementById("myDiv").style.backgroundImage = "url(../assets/media/img/sunrise.jpg)";
+          document.getElementById("myDiv").style.backgroundImage = "url('../assets/media/img/sunrise.jpg')";
         }
         else if (bgimage == "afternoon") {
         // after 12:00PM
@@ -363,15 +363,14 @@ function showCongratzPopup() {
   this.successModal.modal("show");
 }
 
+
+
 function controlAmbientSound() {
-  var isChecked = document.getElementById("ambiSound").checked;
-  console.log(isChecked);
-  if (isChecked) {
-    soundManager.play("ambientSound");
-    console.log("Audio is resumed");
+ let ambientnoise = soundManager.getSoundById('ambientSound')
+  if (!ambientnoise.paused) {
+    soundManager.pause('ambientSound');
   } else {
-    soundManager.pause("ambientSound");
-    console.log("Audio is stopped");
+    soundManager.resume('ambientSound');
   }
 }
 
