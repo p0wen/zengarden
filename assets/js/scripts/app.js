@@ -2,7 +2,7 @@
 
 const currentHour = new Date().getHours();
 
-if (currentHour > 0 && currentHour < 12) {
+if (currentHour => 0 && currentHour < 12) {
     // after Midnight and before 12:00PM
     document.getElementById("myDiv").style.backgroundImage =
         "url('assets/media/img/sunrise.jpg')";
@@ -178,7 +178,7 @@ function controlTimer() {
             startStopBtnIcon.classList.remove("fa-pause");
             startStopBtnIcon.classList.add("fa-play");
         } else if (status === "complete") {
-            startStopButton.dataset.status = "countdown";
+            startStopButton.dataset.status = "stopped";
             status = startStopButton.getAttribute("data-status");
             resetTimer();
             startStopBtnIcon.classList.remove("fa-redo");
@@ -279,6 +279,7 @@ function startTimer() {
             mediStreak();
             startSoundPlayed = false;
             showCountDown = true;
+            counter = 3;
         } else {
             progress =
                 outlineLength - (currentTime / meditationDuration) * outlineLength;
