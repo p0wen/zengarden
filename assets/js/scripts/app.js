@@ -5,11 +5,11 @@ const currentHour = new Date().getHours();
 if (currentHour > 0 && currentHour < 12) {
   // after Midnight and before 12:00PM
   document.getElementById("myDiv").style.backgroundImage =
-    "url('../assets/media/img/sunrise.jpg')";
+    "url('assets/media/img/sunrise.jpg')";
 } else if (currentHour >= 12) {
   // after 12:00PM
   document.getElementById("myDiv").style.backgroundImage =
-    "url('../assets/media/img/afternoon.jpg')";
+    "url('assets/media/img/afternoon.jpg')";
 }
 
 let changeBackgroundBTN = document.querySelectorAll(".changebackground button");
@@ -21,11 +21,11 @@ function changeBackground() {
       bgimage = this.getAttribute("background-img");
         if (bgimage == "morning") {
         // Use Morning Background
-          document.getElementById("myDiv").style.backgroundImage = "url('../assets/media/img/sunrise.jpg')";
+          document.getElementById("myDiv").style.backgroundImage = "url('assets/media/img/sunrise.jpg')";
         }
         else if (bgimage == "afternoon") {
         // after 12:00PM
-        document.getElementById("myDiv").style.backgroundImage = "url('../assets/media/img/afternoon.jpg')";
+        document.getElementById("myDiv").style.backgroundImage = "url('assets/media/img/afternoon.jpg')";
         }
         else if (bgimage == "random") {
         // use random background from unsplash
