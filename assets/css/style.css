@@ -1,15 +1,17 @@
 /* Main Page */
 
-.app {    
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 1.5;
-    color: #e9ecef;
-    text-align: left;
+.app {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #e9ecef;
+  text-align: left;
 }
 
 .toolbar {
@@ -23,34 +25,35 @@
   text-align: center;
 }
 
-.appname, .settingsicon {
-    color: #353535;
+.appname,
+.settingsicon {
+  color: #353535;
 }
 
 .quote {
- /* background: lightsalmon; */
+  /* background: lightsalmon; */
   height: 20vh;
   font-size: 1.3rem;
 }
 
 .greyfilter {
-    background: #343a4038;
+  background: #343a4038;
 }
 .player-container {
- /* background: lightseagreen; */
+  /* background: lightseagreen; */
   height: 65vh;
 }
 
 .streak {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 /* toolbar section */
 .fa-wind {
-    color: #ff6000;
+  color: #ff6000;
 }
 
 .settingsicon {
@@ -125,9 +128,9 @@
 
 /* .streakbar section */
 
-.streakbar{
-    margin-bottom: 0rem;
-    height: 10vh;
+.streakbar {
+  margin-bottom: 0rem;
+  height: 10vh;
 }
 /* Toggle for Sound https://www.w3schools.com/howto/howto_css_switch.asp */
 
@@ -155,8 +158,8 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -167,16 +170,16 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -194,23 +197,22 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-
 /* Background Settings */
 
 .backgroundicon {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    font-size: 2.5rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-size: 2.5rem;
 }
 
 .backgroundtext {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    font-size: 1.2rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-size: 1.2rem;
 }
 
 /* Modal Background Switch Button */
@@ -223,5 +225,5 @@ input:checked + .slider:before {
 }
 
 .btng:hover {
-  color:#ff6000;
+  color: #ff6000;
 }
