@@ -29,7 +29,7 @@ function changeBackground() {
             }
             else if (bgimage == "random") {
                 // use random background from unsplash
-                document.getElementById("myDiv").style.backgroundImage = "url('https://source.unsplash.com/random/1600x800')"
+                document.getElementById("myDiv").style.backgroundImage = "url('https://source.unsplash.com/random/1080')"
             };
         });
     });
