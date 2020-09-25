@@ -149,10 +149,41 @@ Frameworks, Libraries & Programs
 
 ### Manual Testing
 
+Testing Protocol
 1. Start Stop of Timer
-1. Entering Settings
-    1. Switching Meditation-Duration while Timer is playing
+2. Entering Settings while no mediation is running
+3. Entering Settings while meditation is running
+4. Switching Meditation-Duration while no mediation is running
+5. Switching Meditation-Duration while Timer is playing
+6. Switch background
+7. Activate/Deactivate White-Noise
+8. Toggle Volume of White-Noise
+9. Check Streak Logic after one missed day
+10. Check Streak Logic over 7 days
 
+Testing Methods
+* Browser Compatability 
+* Device Compatibility
+* Friends and Family Testing
+* Peer-Review in CI #slack 
+
+### Validator Checks, Audits & Tools
+
+* HTML Validator
+* CSS Validator
+* JS Hint
+* Lighthouse
+* Troy
+* caniuse.com
+
+
+### Known Bugs & Issues
+
+* Fixed Bugs & Issues:
+** ...
+
+* Open Issues:
+** ...
 
 ## Deployment
 
@@ -184,8 +215,27 @@ Option B: Fork the repository (also see https://docs.github.com/en/free-pro-team
 
 ### References
 
+* Bootstrap 4.5
+* css-trciks.com
+* w3schools.com
+* youtube.com
+* stackoverflow.com
+* medium.com
+
 ### Media
 
+* unsplash.com
+* freesound.org
+* http://ami.responsivedesign.is
 
 ### Acknowledgements
 
+My Mentor for continuous help and support throughout the project.
+
+The Code Institute Slack Community.
+
+Friends & Family for continuous feedback and support.
+
+# Contact
+
+Created by @p0wen
