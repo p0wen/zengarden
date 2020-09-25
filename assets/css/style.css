@@ -71,7 +71,7 @@
 /* .quote section */
 
 .quoteheading {
-  font-style: bold;
+  font-weight: bold;
 }
 
 .quotetext {
@@ -79,7 +79,7 @@
 }
 
 .author {
-  font-style: normal;
+  font-weight: normal;
 }
 
 /* .player-container section */
