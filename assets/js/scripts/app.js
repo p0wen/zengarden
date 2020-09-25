@@ -139,6 +139,7 @@ function init() {
     timerSettings();
     controlTimer();
     changeBackground();
+    checkStreak();
 }
 
 // Timer Settings
