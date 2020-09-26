@@ -177,11 +177,11 @@
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: #ff6000;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px #ff6000;
 }
 
 input:checked + .slider:before {
@@ -228,4 +228,37 @@ input:checked + .slider:before {
 
 .btng:hover {
   color: #ff6000;
+}
+
+.volumeslider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 7px;
+  border-radius: 3px;
+  background: #dae0e5;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.volumeslider:hover {
+  opacity: 1;
+}
+
+.volumeslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ff6000;
+  cursor: pointer;
+}
+
+.volumeslider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ff6000;
+  cursor: pointer;
 }
