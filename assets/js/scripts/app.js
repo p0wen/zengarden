@@ -3,29 +3,18 @@ const currentHour = new Date().getHours();
 let currDate = new Date();
 let currYear = currDate.getFullYear();
 let currMonth = currDate.getMonth() + 1;
-let dateLastDone = new Date();
+let dateLastDone;
+let oneDayAgo;
+let todayDate;
 currDate.setHours(0, 0, 0, 0);
 
-if (currMonth < 10) {
-  currMonth = "0" + currMonth;
-}
-
-var currDay = currDate.getDate();
-
-if (currDay < 10) {
-  currDay = "0" + currDay;
-}
-
-var todayDate = currYear + "-" + currMonth + "-" + currDay;
-
-var oneDayAgo = currYear + "-" + currMonth + "-" + (currDay - 1);
-
 // generate current streakBar based on localStorage
+let streak = 0;
 let streakBar = document.getElementById("streakbar");
 let yourStreak = parseInt(localStorage.getItem("yourStreak"));
 let streakBarDummy = "";
 let sevenDayStreak = 7;
-
+/**
 for (var i = 0; i < sevenDayStreak; i++) {
   if (yourStreak > 0) {
     streakBarDummy += '<i class="far fa-check-square"></i>';
@@ -34,6 +23,7 @@ for (var i = 0; i < sevenDayStreak; i++) {
     streakBarDummy += '<i class="far fa-square"></i>';
   }
 }
+ */
 
 // Using innerHTML without += to increase DOM Performances
 streakBar.innerHTML = streakBarDummy;
@@ -57,16 +47,20 @@ fetch("https://type.fit/api/quotes")
 // Define Sounds for howler.js
 
 const startSound = new Howl({
-  src: ["assets/media/sounds/startbell.webm", "assets/media/sounds/startbell.mp3"],
+  src: [
+    "assets/media/sounds/startbell.webm",
+    "assets/media/sounds/startbell.mp3",
+  ],
   html5: true,
-
 });
 const ambientSound = new Howl({
-  src: ["assets/media/sounds/ambientsound.webm", "assets/media/sounds/ambientsound.mp3"],
+  src: [
+    "assets/media/sounds/ambientsound.webm",
+    "assets/media/sounds/ambientsound.mp3",
+  ],
   volume: 0.5,
   loop: true,
   autoplay: true,
-
 });
 const endSound = new Howl({
   src: ["assets/media/sounds/endbell.webm", "assets/media/sounds/endbell.mp3"],
@@ -120,11 +114,14 @@ function animateCircle() {}
 // Updating the Meditation Duration based on settings‚
 
 function init() {
+  dateSetup();
   timeSensitivBackground();
   timerSettings();
   controlTimer();
+  streakInit()
   checkStreak();
   changeBackground();
+  updateStreakData(streak);
 }
 
 // Timer Settings
@@ -357,16 +354,49 @@ function changeBackground() {
  */
 
 //Set streak (days completed) by converting locally stored value to Int
-var streak = parseInt(localStorage.getItem("yourStreak"));
-if (isNaN(streak)) {
-  streak = 0;
+
+function dateSetup() {
+    setDates();
+    setTodayDate();
+    setOneDayAgo();
 }
 
+function setDates() {
+  currDate = new Date();
+  currYear = currDate.getFullYear();
+  currMonth = currDate.getMonth() + 1;
+  currDate.setHours(0, 0, 0, 0);
+  if (currMonth < 10) {
+    currMonth = "0" + currMonth;
+  }
+  currDay = currDate.getDate();
+  if (currDay < 10) {
+    currDay = "0" + currDay;
+  }
+}
+
+function setTodayDate() {
+    setDates();
+    todayDate = currYear + "-" + currMonth + "-" + currDay;
+}
+
+function setOneDayAgo() {
+    setDates();
+    oneDayAgo = currYear + "-" + currMonth + "-" + (currDay - 1);
+} 
+
 //Sets a date value for the last day completed in, or marks it as Never.
-if (!localStorage.getItem("dateLastDone")) {
-  dateLastDone = "Never";
-} else {
-  dateLastDone = localStorage.getItem("dateLastDone");
+
+function streakInit() {
+  if (!localStorage.getItem("dateLastDone")) {
+    dateLastDone = "Never";
+  } else {
+    dateLastDone = localStorage.getItem("dateLastDone");
+  }
+  streak = parseInt(localStorage.getItem("yourStreak"));
+  if (isNaN(streak)) {
+    streak = 0;
+  }
 }
 
 function mediStreak() {
@@ -395,7 +425,7 @@ function mediStreak() {
 function checkStreak() {
   console.log("dateLastDone:", dateLastDone);
   console.log("oneDayAgo:", oneDayAgo);
-  console.log(todayDate);
+  console.log("todayDate", todayDate);
   if (dateLastDone != oneDayAgo && dateLastDone != todayDate) {
     console.log("seems you didnt make it");
     streakReset();
@@ -412,7 +442,7 @@ function streakReset() {
   streak = 0;
   lastDone = "";
   dateLastDone = "";
-  todayDate = "";
+  setTodayDate();
   updateStreakData();
 }
 
