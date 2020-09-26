@@ -1,5 +1,5 @@
 //get today's date for all kinds of function
-const currentHour = new Date().getHours();
+let currentHour = new Date().getHours();
 let currDate = new Date();
 let currYear = currDate.getFullYear();
 let currMonth = currDate.getMonth() + 1;
@@ -115,7 +115,7 @@ function animateCircle() {}
 
 function init() {
   dateSetup();
-  timeSensitivBackground();
+  timeSensitivBackground(currentHour);
   timerSettings();
   controlTimer();
   streakInit()
@@ -304,14 +304,17 @@ function pauseTimer() {
 // Use Background based on Time or Settings
 
 function timeSensitivBackground(currentHour) {
-  if ((currentHour) => 0 && currentHour < 12) {
+    console.log("current hours", currentHour)
+  if (currentHour >= 0 && currentHour < 12) {
     // after Midnight and before 12:00PM
     document.getElementById("myDiv").style.backgroundImage =
       "url('assets/media/img/sunrise.jpg')";
+      console.log("its morning")
   } else if (currentHour >= 12) {
     // after 12:00P
     document.getElementById("myDiv").style.backgroundImage =
       "url('assets/media/img/afternoon.jpg')";
+      console.log("its afternoon")
   }
 }
 
