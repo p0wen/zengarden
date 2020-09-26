@@ -1,42 +1,5 @@
-// Use Background based on Time or Settings
-
-const currentHour = new Date().getHours();
-
-if ((currentHour) => 0 && currentHour < 12) {
-  // after Midnight and before 12:00PM
-  document.getElementById("myDiv").style.backgroundImage =
-    "url('assets/media/img/sunrise.jpg')";
-} else if (currentHour >= 12) {
-  // after 12:00PM
-  document.getElementById("myDiv").style.backgroundImage =
-    "url('assets/media/img/afternoon.jpg')";
-}
-
-let changeBackgroundBTN = document.querySelectorAll(".changebackground button");
-
-function changeBackground() {
-  let bgimage = "";
-  changeBackgroundBTN.forEach((option) => {
-    option.addEventListener("click", function () {
-      bgimage = this.getAttribute("background-img");
-      if (bgimage == "morning") {
-        // Use Morning Background
-        document.getElementById("myDiv").style.backgroundImage =
-          "url('assets/media/img/sunrise.jpg')";
-      } else if (bgimage == "afternoon") {
-        // after 12:00PM
-        document.getElementById("myDiv").style.backgroundImage =
-          "url('assets/media/img/afternoon.jpg')";
-      } else if (bgimage == "random") {
-        // use random background from unsplash
-        document.getElementById("myDiv").style.backgroundImage =
-          "url('https://source.unsplash.com/random/1080')";
-      }
-    });
-  });
-}
-
 //get today's date for all kinds of function
+const currentHour = new Date().getHours();
 let currDate = new Date();
 let currYear = currDate.getFullYear();
 let currMonth = currDate.getMonth() + 1;
@@ -71,6 +34,7 @@ for (var i = 0; i < sevenDayStreak; i++) {
     streakBarDummy += '<i class="far fa-square"></i>';
   }
 }
+
 // Using innerHTML without += to increase DOM Performances
 streakBar.innerHTML = streakBarDummy;
 
@@ -89,6 +53,24 @@ fetch("https://type.fit/api/quotes")
     quoteTextElem.innerHTML = `"${quote.text}"`;
     quoteAuthorElem.innerHTML = quote.author;
   });
+
+// Define Sounds for howler.js
+
+const startSound = new Howl({
+  src: ["assets/media/sounds/startbell.webm", "assets/media/sounds/startbell.mp3"],
+  html5: true,
+
+});
+const ambientSound = new Howl({
+  src: ["assets/media/sounds/ambientsound.webm", "assets/media/sounds/ambientsound.mp3"],
+  volume: 0.5,
+  loop: true,
+  autoplay: true,
+
+});
+const endSound = new Howl({
+  src: ["assets/media/sounds/endbell.webm", "assets/media/sounds/endbell.mp3"],
+});
 
 // Building a Timer
 /**
@@ -118,6 +100,7 @@ let meditationProgress = meditationDuration;
 let meditationTimer;
 let countdownTimer;
 let medTimeSetBtn = document.querySelectorAll(".meditationduration button");
+let changeBackgroundBTN = document.querySelectorAll(".changebackground button");
 let startStopButton = document.querySelector(".starttimer");
 let startStopBtnIcon = startStopButton.querySelector("i");
 let timeLeft;
@@ -137,10 +120,11 @@ function animateCircle() {}
 // Updating the Meditation Duration based on settings‚
 
 function init() {
+  timeSensitivBackground();
   timerSettings();
   controlTimer();
-  changeBackground();
   checkStreak();
+  changeBackground();
 }
 
 // Timer Settings
@@ -214,7 +198,7 @@ let startSoundPlayed = false;
 
 function playStartSound() {
   if (!startSoundPlayed) {
-    soundManager.play("startSound");
+    startSound.play();
     startSoundPlayed = true;
   }
 }
@@ -265,7 +249,7 @@ function startTimer() {
         outlineLength - (currentTime / meditationDuration) * outlineLength;
       outline.style.strokeDashoffset = progress;
       clearInterval(meditationTimer);
-      soundManager.play("endSound");
+      endSound.play();
       meditationTimeElem.innerHTML = `Seize the day!`;
       status = startStopButton.dataset.status = "complete";
       startStopButton.getAttribute("data-status");
@@ -318,6 +302,42 @@ function pauseTimer() {
   meditationTimeElem.innerHTML = `${Math.floor(timeLeft / 60)}:${Math.floor(
     timeLeft % 60
   )}`;
+}
+
+// Use Background based on Time or Settings
+
+function timeSensitivBackground(currentHour) {
+  if ((currentHour) => 0 && currentHour < 12) {
+    // after Midnight and before 12:00PM
+    document.getElementById("myDiv").style.backgroundImage =
+      "url('assets/media/img/sunrise.jpg')";
+  } else if (currentHour >= 12) {
+    // after 12:00P
+    document.getElementById("myDiv").style.backgroundImage =
+      "url('assets/media/img/afternoon.jpg')";
+  }
+}
+
+function changeBackground() {
+  let bgimage = "";
+  changeBackgroundBTN.forEach((option) => {
+    option.addEventListener("click", function () {
+      bgimage = this.getAttribute("background-img");
+      if (bgimage == "morning") {
+        // Use Morning Background
+        document.getElementById("myDiv").style.backgroundImage =
+          "url('assets/media/img/sunrise.jpg')";
+      } else if (bgimage == "afternoon") {
+        // after 12:00PM
+        document.getElementById("myDiv").style.backgroundImage =
+          "url('assets/media/img/afternoon.jpg')";
+      } else if (bgimage == "random") {
+        // use random background from unsplash
+        document.getElementById("myDiv").style.backgroundImage =
+          "url('https://source.unsplash.com/random/1080')";
+      }
+    });
+  });
 }
 
 /** Build a Streak Recording for past 7 days Inspiration by https://github.com/sanspoint/justdothething
@@ -409,7 +429,7 @@ function updateStreakData(streak) {
   }
   // Using innerHTML without += to increase DOM Performance
   streakBar.innerHTML = streakBarDummy;
-  localStorage.setItem("yourStreak", streak.toString());
+  localStorage.setItem("yourStreak", streak);
 }
 
 function showCongratzPopup() {
@@ -418,11 +438,11 @@ function showCongratzPopup() {
 }
 
 function controlAmbientSound() {
-  let ambientnoise = soundManager.getSoundById("ambientSound");
-  if (!ambientnoise.paused) {
-    soundManager.pause("ambientSound");
+  let ambientnoise = ambientSound.playing();
+  if (ambientnoise) {
+    ambientSound.pause();
   } else {
-    soundManager.resume("ambientSound");
+    ambientSound.play();
   }
 }
 
@@ -430,5 +450,5 @@ function controlAmbientSound() {
 
 function updateVolume() {
   let volume = document.getElementById("myRange").value;
-  soundManager.setVolume("ambientSound", volume);
+  ambientSound.volume(volume);
 }
