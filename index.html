@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="UTF-8" />
+    <meta name="Description" content="Zengarden delivers a high quality and minimalistic timer function to help everyone to focus on what really matters.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<link rel="stylesheet"
@@ -45,7 +46,7 @@
 			</div>
 			<div class="row">
 				<div class="col">
-					<button type="button" class="starttimer" data-status="stopped">
+					<button type="button" class="starttimer" data-status="stopped" aria-label="Start Button">
               <i class="fas fa-play"></i>
             </button>
 				</div>
@@ -87,20 +88,21 @@
 						<div class="timersettings">
 							<span>Meditation Time:</span><br />
 							<div class="btn-group meditationduration" role="group" aria-label="Meditation Timer">
-								<button type="button" class="btn btn-light" data-time="300">
+								<button type="button" class="btn btn-light" data-time="300" aria-label="5 Min. Meditation">
                     5 Min.
                   </button>
-								<button type="button" class="btn btn-light" data-time="600">
+								<button type="button" class="btn btn-light" data-time="600" aria-label="10 Min. Meditation"> 
                     10 Min.
                   </button>
 								<button
                     type="button"
                     class="btn btn-light active"
                     data-time="900"
+                    aria-label="15 Min. Meditation"
                   >
                     15 Min.
                   </button>
-								<button type="button" class="btn btn-light" data-time="1200">
+								<button type="button" class="btn btn-light" data-time="1200" aria-label="20 Min. Meditation">
                     20 Min.
                   </button>
 							</div>
@@ -133,7 +135,7 @@
 							<div class="col whitenoise">Whitenoise</div>
 							<div class="col">
 								<label class="switch">
-                    <input type="checkbox" id="ambiSound" onclick="controlAmbientSound()" checked />
+                    <input type="checkbox" id="ambiSound" onclick="controlAmbientSound()" checked aria-label="White Noise On/Off"/>
                     <span class="slider round"></span>
                   </label>
 							</div>
@@ -149,6 +151,7 @@
                     value="0.5"
                     class="volumeslider"
                     id="myRange"
+                    aria-label="Volume Control"
                   />
                 </div>
 							</div>
@@ -159,19 +162,19 @@
 							<div class="row">
 								<div class="col">
 									<div class="row backgroundicon">
-										<button type="button" class="btng" background-img="morning"><i class="fas fa-sun" aria-hidden="true"></i></button>
+										<button type="button" class="btng" background-img="morning" aria-label="Morning Background"><i class="fas fa-sun" aria-hidden="true"></i></button>
 									</div>
 									<div class="row backgroundtext">Morning</div>
 								</div>
 								<div class="col">
 									<div class="row backgroundicon">
-										<button type="button" class="btng" background-img="afternoon"><i class="fas fa-moon" aria-hidden="true"></i></button>
+										<button type="button" class="btng" background-img="afternoon" aria-label="Afternoon Background"><i class="fas fa-moon" aria-hidden="true"></i></button>
 									</div>
 									<div class="row backgroundtext">Afternoon</div>
 								</div>
 								<div class="col">
 									<div class="row backgroundicon">
-										<button type="button" class="btng" background-img="random"><i class="fas fa-random" aria-hidden="true"></i></button>
+										<button type="button" class="btng" background-img="random" aria-label="Random Background"><i class="fas fa-random" aria-hidden="true"></i></button>
 									</div>
 									<div class="row backgroundtext">Random</div>
 								</div>
