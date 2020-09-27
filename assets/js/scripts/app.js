@@ -1,12 +1,16 @@
-// Register Service Worker //
+// Register Service Worker -  https://developers.google.com/web/fundamentals/primers/service-workers //
 
-window.onload = () => {
-  "use strict";
-
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("../sw.js");
-  }
-};
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
 
 //get today's date for all kinds of function
 let currentHour = new Date().getHours();
