@@ -7,7 +7,8 @@ var cacheName = "zengarden";
 var filesToCache = [
   "/",
   "/index.html",
-  "/assets/media/img/afternoon.jpg",
+ /** 
+  * "/assets/media/img/afternoon.jpg",
   "/assets/media/img/sunrise.jpg",
   "/assets/media/img/pause.svg",
   "/assets/media/img/play.svg",
@@ -17,6 +18,7 @@ var filesToCache = [
   "/assets/media/sounds/endbell.webm",
   "/assets/media/sounds/startbell.mp3",
   "/assets/media/sounds/startbell.webm",
+  */ 
   "/assets/js/scripts/app.js",
   "/assets/css/style.css",
 ];
