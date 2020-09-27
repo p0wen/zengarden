@@ -3,7 +3,8 @@
 
 <head>
 	<meta charset="UTF-8" />
-    <meta name="Description" content="Zengarden delivers a high quality and minimalistic timer function to help everyone to focus on what really matters.">
+	<meta name="Description"
+		content="Zengarden delivers a high quality and minimalistic timer function to help everyone to focus on what really matters.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<link rel="stylesheet"
@@ -33,7 +34,8 @@
 				<p class="author"></p>
 			</div>
 		</div>
-		<div class="row player-container greyfilter">
+		<div class="row greyfilter">
+        <div class="player-container">
 			<div class="circle">
 				<svg class="track-outline" width="" height="453" viewbox="0 0 453 453" fill="none"
 					xmlns="http://www.w3.org/2000/svg">
@@ -44,18 +46,11 @@
 					<circle cx="226.5" cy="226.5" r="216.5" stroke="#ff6000" stroke-width="20" />
 				</svg>
 			</div>
-			<div class="row">
-				<div class="col">
-					<button type="button" class="starttimer" data-status="stopped" aria-label="Start Button">
+			<button type="button" class="starttimer" data-status="stopped" aria-label="Start Button">
               <i class="fas fa-play"></i>
             </button>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<p class="meditationtime"></p>
-				</div>
-			</div>
+			<p class="meditationtime"></p>
+            </div>
 		</div>
 		<div class="row streakbar greyfilter">
 			<div class="col">
@@ -91,7 +86,7 @@
 								<button type="button" class="btn btn-light" data-time="300" aria-label="5 Min. Meditation">
                     5 Min.
                   </button>
-								<button type="button" class="btn btn-light" data-time="600" aria-label="10 Min. Meditation"> 
+								<button type="button" class="btn btn-light" data-time="600" aria-label="10 Min. Meditation">
                     10 Min.
                   </button>
 								<button
@@ -208,7 +203,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
 		<script src="https://kit.fontawesome.com/f34e635ca2.js" crossorigin="anonymous"></script>
 		<script src="assets/js/scripts/app.js"></script>
 		<!-- Load Tests -->

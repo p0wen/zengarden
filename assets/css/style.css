@@ -32,7 +32,7 @@
 
 .quote {
   /* background: lightsalmon; */
-  height: 20vh;
+  height: 25vh;
   font-size: 1.3rem;
 }
 
@@ -41,7 +41,7 @@
 }
 .player-container {
   /* background: lightseagreen; */
-  height: 65vh;
+  height: 50vh;
 }
 
 .streak {
@@ -98,7 +98,7 @@
 
 .player-container svg {
   position: absolute;
-  height: 50%;
+  height: 60%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
@@ -109,27 +109,26 @@
 }
 
 .starttimer {
-  position: absolute;
+  position: relative;
   border: none;
   background: none;
   font-size: 3.5rem;
   color: whitesmoke;
-  transform: translate(-50%, -50%);
+  transform: translate(0%, 50%);
 }
 
 .meditationtime {
   color: white;
-  position: absolute;
+  position: relative;
   font-size: 2.5rem;
-  bottom: auto;
-  transform: translate(-50%, 25%);
+  transform: translate(0%, 80%);
 }
 
 /* .streakbar section */
 
 .streakbar {
-  margin-bottom: 0rem;
-  height: 10vh;
+  padding-top: 1rem;
+  height: 20vh;
 }
 /* Toggle for Sound https://www.w3schools.com/howto/howto_css_switch.asp */
 
