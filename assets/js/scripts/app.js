@@ -1,3 +1,14 @@
+// Register Service Worker //
+
+window.onload = () => {
+  'use strict';
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./sw.js');
+  }
+}
+
 //get today's date for all kinds of function
 let currentHour = new Date().getHours();
 let currDate = new Date();
