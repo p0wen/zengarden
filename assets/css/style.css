@@ -25,6 +25,8 @@
   text-align: center;
 }
 
+
+
 .appname,
 .settingsicon {
   color: #353535;
@@ -40,7 +42,8 @@
 .greyfilter {
   background: #343a4038;
 }
-.player-container {
+
+.playershell  {
   /* background: lightseagreen; */
   height: 50vh;
 }
