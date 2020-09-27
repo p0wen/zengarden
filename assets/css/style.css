@@ -109,23 +109,20 @@
 }
 
 .starttimer {
-  position: static;
+  position: absolute;
   border: none;
-  margin-left: 50%;
   background: none;
   font-size: 3.5rem;
-  margin-top: 179px;
   color: whitesmoke;
   transform: translate(-50%, -50%);
 }
 
 .meditationtime {
   color: white;
-  position: relative;
+  position: absolute;
   font-size: 2.5rem;
   bottom: auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  transform: translate(-50%, 25%);
 }
 
 /* .streakbar section */
