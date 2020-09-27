@@ -13,7 +13,7 @@
       "src": "/assets/media/img/favicon_io/maskable_icon.png",
       "sizes": "196x196",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }, {
       "src": "/assets/media/img/favicon_io/zen512x512.png",
       "sizes": "512x512",
