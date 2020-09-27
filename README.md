@@ -98,11 +98,13 @@ What?
 ** in the setting modal the user has the chance to manually switch between morning, afternoon or a random background image. 
 ** random background image is pulled from unsplash (https://source.unsplash.com)
 
-### Features Left to Implement
+### Features/Changes for the Future
 
 * Warm Up & Cool-Down Time can be activated
 
-### Features for the Future
+* Reduce amount of global variables
+
+* Refactor code
 
 * Track amount of completed streaks (e.g. 4 x 7-Day-Streaks)
 
@@ -126,8 +128,11 @@ Frameworks, Libraries & Programs
 ** 
 * Font Awesome 5.13.0
 ** 
-* SoundManager2
+* ~SoundManager2~
 ** SoundManager2 helps with audio() support abroad various browser
+* Howler.js
+** Howler.js library helpt to handles all audio() calls across various browsers
+** special support for iOS
 * Google Fonts
 ** 
 * jQuery
@@ -160,6 +165,7 @@ Testing Protocol
 8. Toggle Volume of White-Noise
 9. Check Streak Logic after one missed day
 10. Check Streak Logic over 7 days
+11. Testing if Service Worker is running --> Screenshot and Way to check
 
 Testing Methods
 * Browser Compatability 
@@ -176,14 +182,14 @@ Testing Methods
 * Troy
 * caniuse.com
 
-
 ### Known Bugs & Issues
 
 * Fixed Bugs & Issues:
-** ...
+** Sound on Safari (switched from SoundManager2 to Howler.js)
+** Location of the play/pause button due to absolute positioning
 
 * Open Issues:
-** ...
+** landscape view an mobile devices
 
 ## Deployment
 
