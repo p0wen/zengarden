@@ -5,7 +5,7 @@
 
 let appName = "zengarden";
 let cacheVersion = "version_1";
-let cacheName = appname + cacheVersion;
+let cacheName = appName + cacheVersion;
 let filesToCache = [
   "/zengarden/",
   "/zengarden/index.html",
