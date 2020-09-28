@@ -21,8 +21,8 @@ Even though it would be great to have unlimited time for meditation like a zen m
 ### What?
 
  The core functionaly of this WebApp is to provide an meditation timer. It allows the user to start a session, which is signaled by a gentle gong sound. Furthermore the user has the option to activate/deactive an ambient sound, choose the prefered meditation time (5, 10, 15, 20 Minutes) and a background image. Additionally the WebApp tracks the day-to-day interactions and allows the user to track his/her meditation streak.
-____ 
-### User Stories 
+
+## User Stories 
 
 The following user stories where defined before the development:
 * As a meditator i want to choose between longer and shorter sessions, so that i can adjust my practice to my liking.
@@ -34,8 +34,8 @@ The following user stories where defined before the development:
 * As a meditator i want to see inspiration quotes, so that my mind has something to ponder on during my day.
 * As a meditator i want to have beautiful backgrounds, so that my mind is in a positive state.
 
-____
-### Wireframes
+
+## Wireframes
 
 The wireframes were sketched in Balsamiq Mockups and can be found [here](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes) or following the direct links:
 
@@ -52,21 +52,23 @@ The wireframes were sketched in Balsamiq Mockups and can be found [here](https:/
 | Web Settings    | ![Zen Garden - Web Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_web_set.png?raw=true) | ![Zen Garden - Final Web Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_fin_web_set.png?raw=true) | * left out warm-up/cool-down option * only provided on/off switch for white noise and used bell as a default * reminder bell was excluded * added option for a random background * used morning/afternoon background |
 | Mobile Settings | ![Zen Garden - Mob Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_mob_set.png?raw=true) | ![Zen Garden - Final Mob Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_fin_mob_sets.png?raw=true) | (see websettings) |
 
-___
+
 ## UI-Design
 
 ### Structure
+
 The Web App is designed to be a single page application. It basically contains 4 different size sections. On top is the title bar which holds the Logo/Application Name and the Settings-Button. The section that follows provides space to display random Quotes from type.fit. The third section holds the core functionality of the app - the meditation timer. It displays a circle that gets filled as time progresses. Additionally the time is printed below the circle. The user has the option to interact with a single button which controls play, pause and reset. At the bottom of the page the Streakbar is being displayed. It contains of 7 squares which get exchanged for squares with a checkmark after a completed meditation.
 
 ### Colour scheme
-** orange as highlighting color and white font colour
-** pictures with grey "filter" to standardize the looking
+
+The App backgrounds with a light greyfilter on top of it to reach a standardized look. Orange is used as a highlighting color and the font is white.
+
 
 ### Font
 
 Roboto was used due to its "dual nature". On the one hand its clean and geometric and on the other hand it signals friendliness and openness, which is believed to also effect the user when seeing the font.
 
-____
+
 ## Features
 
 * Timer incl. Control, Start / Finish Sound
@@ -119,7 +121,7 @@ ____
 * in order to support cross device support a user data base would also be a helpful feature
 * Integrate End-to-End Testing Framework (e.g. Cypress) to increase quality
 
-____
+
 ## Technologies Used
 
 ### Languages
@@ -153,7 +155,7 @@ ____
 * Am I responsive
 ** To Check responsiveness and create demonstration gif for readme
 
-____ 
+
 ## Testing
 
 ### Automatated Testing
