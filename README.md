@@ -198,32 +198,32 @@ Jasmine used to set up tests. Some example test where written but should be exte
 
 #### Validator Checks, Audits & Tools
 
-* W3C HTML Validator (https://validator.w3.org/)
-** Used to make sure that no obvious html mistakes are made
-** fixed wrong data-attribute on buttons
-** removed unused code
+* W3C HTML Validator (https://validator.w3.org/)  
+   Used to make sure that no obvious html mistakes are made  
+   fixed wrong data-attribute on buttons  
+   removed unused code  
 ![Zen Garden - Final Mob Settings](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/w3validator.png?raw=true)
 * CSS Validator https://jigsaw.w3.org/css-validator/
-* JS Hint (https://jshint.com/)
-** Used to remove unused variables and check for mistakes
+* JS Hint (https://jshint.com/)  
+   Used to remove unused variables and check for mistakes  
 ![JS Hint Results](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/jshint.png?raw=true) 
-* Lighthouse (https://developers.google.com/web/tools/lighthouse)
-** Used the validator to improve Performance, Accessibility, Best Practices, SEO and Progress Web App Setup
+* Lighthouse (https://developers.google.com/web/tools/lighthouse)  
+   Used the validator to improve Performance, Accessibility, Best Practices, SEO and Progress Web App Setup  
 ![Light House Results](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/lighthousresults.png?raw=true)raw=true)
 * Troy (http://troy.labs.daum.net/)
-** tested layout on different device sizes
-* caniuse.com
-** to check CSS content-visibility
+   tested layout on different device sizes
+* caniuse.com  
+   to check CSS content-visibility
 
 ### Known Bugs & Issues
 
-* Fixed Bugs & Issues:
-** Sound on Safari not playing (switched from SoundManager2 to Howler.js)
-** Location of the play/pause button due to absolute positioning
-** Setup of PWA was tricky due to routing of github pages - solution was adapted from https://gist.github.com/kosamari/7c5d1e8449b2fbc97d372675f16b566e
+* Fixed Bugs & Issues:  
+   Sound on Safari not playing (switched from SoundManager2 to Howler.js)  
+   Location of the play/pause button due to absolute positioning  
+   Setup of PWA was tricky due to routing of github pages - solution was adapted from https://gist.github.com/kosamari/c5d1e8449b2fbc97d372675f16b566e
 
-* Open Issues:
-** landscape view an mobile devices - App intended to be used in portrait mode
+* Open Issues:  
+   landscape view an mobile devices - App intended to be used in portrait mode
 
 ____ 
 ## Deployment
