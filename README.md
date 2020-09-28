@@ -2,7 +2,7 @@
 
 _"Zen Garden is a minimalistic Meditation-Timer to help you find your zen moment fast"_
 
-[![Portofolio View](https://github.com/p0wen/zengarden/blob/master/assets/media/img/portfoliooverview.gif?raw=true "Zen Garden Demo")](https://p0wen.github.io/zengarden/ "Zen Garden")
+[![alt text](https://github.com/p0wen/zengarden/blob/master/assets/media/img/portfoliooverview.gif?raw=true "Zen Garden Demo")](https://p0wen.github.io/zengarden/ "Zen Garden")
  
 ___
 ## UX
@@ -47,7 +47,7 @@ The wireframes were sketched in Balsamiq Mockups and can be found [here](https:/
 
 |                 | Planned           | Result            | Reasoning   |
 |-----------------|-------------------|-------------------|-------------|
-| Web Landing     | ![Zen Garden - Web](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_web.png?raw=true) | ![Zen Garden - Final Web](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_fin_web.png?raw=true) | * progressbar exchanged for animated outline * left out warmup/cooldown options * included settingsbutton |
+| Web Landing     | ![Zen Garden -  Web](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_web.png?raw=true "ZenGarden") | ![Zen Garden - Final Web](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_fin_web.png?raw=true "Zen Garden Final") | * progressbar exchanged for animated outline * left out warmup/cooldown options * included settingsbutton |
 | Mobile Landing  | ![Zen Garden - Mob](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_mob.png?raw=true) | ![Zen Garden - Final Mob](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_fin_mob.png?raw=true) | * exchanged progressbar for animated circle to track progress |
 | Web Settings    | ![Zen Garden - Web Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_web_set.png?raw=true) | ![Zen Garden - Final Web Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_fin_web_set.png?raw=true) | * left out warm-up/cool-down option * only provided on/off switch for white noise and used bell as a default * reminder bell was excluded * added option for a random background * used morning/afternoon background |
 | Mobile Settings | ![Zen Garden - Mob Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_mob_set.png?raw=true) | ![Zen Garden - Final Mob Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_fin_mob_sets.png?raw=true) | (see websettings) |
@@ -82,32 +82,32 @@ Roboto was used due to its "dual nature". On the one hand its clean and geometri
  
 ### Finished Features
 
-* Timer inkl. Control
-** Interactive countdown timer with animated circle created through the use of html, css, javascript
-** countdown time can be adjusted (5, 10, 15, 20 Minutes)
-** countdown can be restored after finishing a session
-** countdown can be started, stopped and resumed
-** default meditation duration is 15 minutes
+* Timer inkl. Control  
+   Interactive countdown timer with animated circle created through the use of html, css, javascript  
+   countdown time can be adjusted (5, 10, 15, 20 Minutes)
+   countdown can be restored after finishing a session  
+   countdown can be started, stopped and resumed  
+   default meditation duration is 15 minutes  
 
-* Inspirational Quotes
-** Quotes are fetched from type.fit/api/
-** Function calculates random number between 1 and 100 which is then used to choose the quoate from the array
-** quotes get fetched on every page reload
+* Inspirational Quotes  
+   Quotes are fetched from type.fit/api/  
+   Function calculates random number between 1 and 100 which is then used to choose the quoate from the array  
+   quotes get fetched on every page reload
 
-* Ambient Sound can be activated/deactivated incl. volume controle
-** integrated ~soundManager2~ howler.js library (ADD LINK) to handle playing of songs and support different browser
-** integrated start- and endbell sound
-** integrated option to play ambient sound (river sound)
+* Ambient Sound can be activated/deactivated incl. volume controle  
+   integrated ~soundManager2~ howler.js library (ADD LINK) to handle playing of songs and support different browser  
+   integrated start- and endbell sound  
+   integrated option to play ambient sound (river sound)
 
-* 7-Day-Streak
-** day to day activities are tracked through 2 localstorage variables (Number of Sessions & Date last session completed)
-** if one day of meditation is missed the streak is broken and all values are reset
-** after 7 days in a row a congratz popup will show
+* 7-Day-Streak  
+   day to day activities are tracked through 2 localstorage variables (Number of Sessions & Date last session completed)  
+   if one day of meditation is missed the streak is broken and all values are reset  
+   after 7 days in a row a congratz popup will show
 
-* Background can be switched (Morning, Afternoon, Random)
-** depending on the time of the day the user gets a different image
-** in the setting modal the user has the chance to manually switch between morning, afternoon or a random background image. 
-** random background image is pulled from unsplash (https://source.unsplash.com)
+* Background can be switched (Morning, Afternoon, Random)  
+   depending on the time of the day the user gets a different image  
+   in the setting modal the user has the chance to manually switch between morning, afternoon or a random background image.   
+   random background image is pulled from unsplash (https://source.unsplash.com)
 
 ### Features/Changes for the Future
 
@@ -132,28 +132,28 @@ Roboto was used due to its "dual nature". On the one hand its clean and geometri
 
 ### Frameworks, Libraries & Programs
 
-* Bootstrap 4.5.0
-** To make use of a responsive css-framework and to ensure mobile first approach.
-* Font Awesome 5.13.0
-** Using Icons within the page
-* ~SoundManager2~
-* Howler.js
-** Howler.js library helpy to handles all audio() calls across various browsers
-** special support for iOS
-* Google Fonts
-** To make use of the Roboto Font
-* jQuery
-** Comes with Bootstrap
-* Git
-** Version Control
-* GitHub
-** cloud-based hosting service to manage Git repositories.
-* Gitpod
-** cloud-base development Environment 
-* Balsamiq
-** Wireframe design tool
-* Am I responsive
-** To Check responsiveness and create demonstration gif for readme
+* Bootstrap 4.5.0  
+   To make use of a responsive css-framework and to ensure mobile first approach.
+* Font Awesome 5.13.0  
+   Using Icons within the page
+* ~SoundManager2~  
+* Howler.js  
+   Howler.js library helpy to handles all audio() calls across various browsers  
+   special support for iOS
+* Google Fonts  
+   To make use of the Roboto Font
+* jQuery  
+   Comes with Bootstrap
+* Git  
+   Version Control  
+* GitHub  
+   cloud-based hosting service to manage Git repositories.
+* Gitpod  
+   cloud-base development Environment 
+* Balsamiq  
+   Wireframe design tool
+* Am I responsive  
+   To Check responsiveness and create demonstration gif for readme
 
 
 ## Testing
@@ -165,24 +165,24 @@ Jasmine used to set up tests. Some example test where written but should be exte
 ### Manual Testing
 
 #### Testing Protocol
-1. Start Stop of Timer
-![Start / Stop Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/startstop.gif?raw=true)
-![Start / Stop Countdown](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/countdown.gif?raw=true)
+1. Start Stop of Timer  
+   ![Start / Stop Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/startstop.gif?raw=true)  
+   ![Start / Stop Countdown](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/countdown.gif?raw=true)
 2. Entering Settings while no mediation is running
 3. Entering Settings while meditation is running
-4. Switching Meditation-Duration while no mediation is running
-![Time Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/switchinactive.gif?raw=true)
-5. Switching Meditation-Duration while Timer is playing
-![Time Control while Active](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/switchwhilemed.gif?raw=true)
-6. Switch background
-![Background Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/backgroundswitch.gif?raw=true)
-7. Activate/Deactivate White-Noise & Change Volume of White-Noise
-![Sound Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/soundcontrol.gif?raw=true)
+4. Switching Meditation-Duration while no mediation is running  
+   ![Time Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/switchinactive.gif?raw=true)
+5. Switching Meditation-Duration while Timer is playing  
+   ![Time Control while Active](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/switchwhilemed.gif?raw=true)
+6. Switch background  
+   ![Background Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/backgroundswitch.gif?raw=true)
+7. Activate/Deactivate White-Noise & Change Volume of White-Noise  
+   ![Sound Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/soundcontrol.gif?raw=true)
 9. Check Streak Logic after one missed day
-10. Check Streak Logic over 7 days
-![7 Day Streak](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/7daystreak.gif?raw=true)
-11. Testing if Service Worker is running
-![Service Worker](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/serviceworker.png?raw=true)
+10. Check Streak Logic over 7 days  
+   ![7 Day Streak](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/7daystreak.gif?raw=true)
+11. Testing if Service Worker is running  
+   ![Service Worker](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/serviceworker.png?raw=true)
 
 
 #### Testing Methods
