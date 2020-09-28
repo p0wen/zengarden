@@ -249,6 +249,8 @@ If you want to deploy the site to githubpages yourself, you will need to adjust 
 ```git clone https://github.com/p0wen/zengarden.git```
 * Press Enter to create local clone
 
+
+
 #### Option B: Fork the repository (also see https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo):
 * Navigate to Mainpage of the repository
 * Click Fork in the top-right corner
