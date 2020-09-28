@@ -25,6 +25,7 @@ let currentHour = new Date().getHours();
 let currDate = new Date();
 let currYear = currDate.getFullYear();
 let currMonth = currDate.getMonth() + 1;
+let currDay;
 let dateLastDone;
 let oneDayAgo;
 let todayDate;
@@ -304,7 +305,7 @@ function startTimer() {
   meditationTimer = setInterval(function () {
     // trying to also be prepared for unexpected edge cases in the if statement since meditationeProgress should never be smaller 0
     if (meditationProgress <= 0) {
-      caluclateProgress();
+      calculateProgress();
       clearInterval(meditationTimer);
       endSound.play();
       meditationTimeElem.innerHTML = `Seize the day!`;
@@ -317,7 +318,7 @@ function startTimer() {
       showCountDown = true;
       counter = 3;
     } else {
-      caluclateProgress();
+      calculateProgress();
       printLog(progress);
       printLog(currentTime);
       printLog(meditationProgress);
@@ -334,7 +335,7 @@ function startTimer() {
  * @param {} message
  */
 
-function caluclateProgress() {
+function calculateProgress() {
   progress = outlineLength - (currentTime / meditationDuration) * outlineLength;
   outline.style.strokeDashoffset = progress;
 }
@@ -363,6 +364,9 @@ function resetTimer() {
   meditationProgress = meditationDuration;
   progress = 0;
   outline.style.strokeDashoffset = outlineLength;
+  startSoundPlayed = false;
+  showCountDown = true;
+  counter = 3;
   timerSettings();
 }
 
@@ -373,7 +377,6 @@ function resetTimer() {
 function pauseTimer() {
   clearInterval(meditationTimer);
   timeLeft = meditationProgress;
-  progressStatus = progress;
   meditationTimeElem.innerHTML = formatDuration(timeLeft);
 }
 
@@ -404,7 +407,7 @@ function changeBackground() {
   let bgimage = "";
   changeBackgroundBTN.forEach((option) => {
     option.addEventListener("click", function () {
-      bgimage = this.getAttribute("background-img");
+      bgimage = this.getAttribute("bg-img");
       if (bgimage == "morning") {
         // Use Morning Background
         document.getElementById("myDiv").style.backgroundImage =
@@ -553,7 +556,6 @@ function streakReset() {
   localStorage.removeItem("dateLastDone");
   localStorage.removeItem("yourStreak");
   streak = 0;
-  lastDone = "";
   dateLastDone = "";
   setTodayDate();
   updateStreakData();
