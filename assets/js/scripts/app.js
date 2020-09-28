@@ -407,7 +407,7 @@ function changeBackground() {
   let bgimage = "";
   changeBackgroundBTN.forEach((option) => {
     option.addEventListener("click", function () {
-      bgimage = this.getAttribute("bg-img");
+      bgimage = this.getAttribute("data-bg");
       if (bgimage == "morning") {
         // Use Morning Background
         document.getElementById("myDiv").style.backgroundImage =
