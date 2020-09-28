@@ -121,6 +121,10 @@
   transform: translate(0%, 50%);
 }
 
+button:focus {
+    outline: none;
+}
+
 .meditationtime {
   color: white;
   position: relative;
