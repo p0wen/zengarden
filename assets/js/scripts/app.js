@@ -1,14 +1,22 @@
 // Register Service Worker -  https://developers.google.com/web/fundamentals/primers/service-workers //
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/zengarden/sw.js', {scope: '/zengarden/'}).then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker
+      .register("/zengarden/sw.js", { scope: "/zengarden/" })
+      .then(
+        function (registration) {
+          // Registration was successful
+          printLog(
+            "ServiceWorker registration successful with scope: ",
+            registration.scope
+          );
+        },
+        function (err) {
+          // registration failed :(
+          printLog("ServiceWorker registration failed: ", err);
+        }
+      );
   });
 }
 
@@ -64,10 +72,7 @@ const ambientSound = new Howl({
   autoplay: true,
 });
 const endSound = new Howl({
-  src: [
-    "assets/media/sounds/endbell.webm",
-    "assets/media/sounds/endbell.mp3"
-  ],
+  src: ["assets/media/sounds/endbell.webm", "assets/media/sounds/endbell.mp3"],
   html5: true,
 });
 
@@ -88,13 +93,8 @@ const endSound = new Howl({
  * store successfully finished session to local storage
  */
 
-
- // Const 
-const outline = document.querySelector(".moving-outline circle");
-const outlineLength = outline.getTotalLength();
-
 // Global Variables
-let meditationDuration = 10;
+let meditationDuration = 900;
 let meditationProgress = meditationDuration;
 let meditationTimer;
 let countdownTimer;
@@ -106,6 +106,9 @@ let counter;
 let countdownleft = 3;
 let startSoundPlayed = false;
 
+// Const
+const debugmode = false;
+
 // Elements / BTNs
 
 let meditationTimeElem = document.querySelector(".meditationtime");
@@ -115,9 +118,12 @@ let startStopButton = document.querySelector(".starttimer");
 let startStopBtnIcon = startStopButton.querySelector("i");
 let status = startStopButton.getAttribute("data-status");
 
+const outline = document.querySelector(".moving-outline circle");
+const outlineLength = outline.getTotalLength();
+
 init();
 
-// Circle
+// Circle Stroke Setup
 
 outline.style.strokeDasharray = outlineLength;
 outline.style.strokeDashoffset = outlineLength;
@@ -135,15 +141,25 @@ function init() {
   updateStreakData(streak);
 }
 
-// Timer Settings
+/**
+ * If debugmode is true all console.logs are printed
+ * otherwise console.log isdeactivated
+ * @param {value} message
+ */
+
+function printLog(message) {
+  if (debugmode) {
+    console.log(message);
+  }
+}
+
 /**
  * Setup the Timer after changes are made in the Modal Settings by the user
  */
 
+
 function timerSettings() {
-  meditationTimeElem.textContent = `${Math.floor(
-    meditationDuration / 60
-  )}:${Math.floor(meditationDuration % 60)}`;
+  meditationTimeElem.textContent = formatDuration(meditationDuration);
   medTimeSetBtn.forEach((option) => {
     option.addEventListener("click", function () {
       stopTimer();
@@ -156,12 +172,24 @@ function timerSettings() {
       outline.style.strokeDashoffset = outlineLength;
       meditationDuration = this.getAttribute("data-time");
       meditationProgress = meditationDuration;
-      meditationTimeElem.innerHTML = `${Math.floor(
-        meditationDuration / 60
-      )}:${Math.floor(meditationDuration % 60)}`;
+      meditationTimeElem.innerHTML = formatDuration(meditationDuration);
       option.classList.add("active");
     });
   });
+}
+
+/**
+ * This function seperates Minutes and Seconds for meditationDuration
+ * @param {INTEGER} meditationDuration
+ */
+
+function formatDuration(meditationDuration) {
+  let minutes = `${Math.floor(meditationDuration / 60)}`;
+  let seconds = `${Math.floor(meditationDuration % 60)}`;
+  if (seconds.length == 1) {
+    seconds = "0" + seconds;
+  }
+  return minutes + ":" + seconds;
 }
 
 /**
@@ -203,8 +231,8 @@ function controlTimer() {
 }
 
 /**
- * Remove the active state from all Timer Settings 
- * @param {Status} settingsTimer 
+ * Remove the active state from all Timer Settings
+ * @param {Status} settingsTimer
  */
 function removeActive(settingsTimer) {
   settingsTimer.forEach((setting) => {
@@ -212,10 +240,9 @@ function removeActive(settingsTimer) {
   });
 }
 
-
-
-
-
+/**
+ * Play Startbell when not played yet
+ */
 function playStartSound() {
   if (!startSoundPlayed) {
     startSound.play();
@@ -223,14 +250,14 @@ function playStartSound() {
   }
 }
 
-/**  Counting down the countdown & meditationduration 
- * (Solution based on https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown)  
+/**  Counting down the countdown & meditationduration
+ * (Solution based on https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown)
  * */
 
- /**
-  * Countdown is played before meditation starts
-  * Countdown is not played if it was completed and meditation is paused and resumed
-  */
+/**
+ * Countdown is played before meditation starts
+ * Countdown is not played if it was completed and meditation is paused and resumed
+ */
 function countDown() {
   counter = countdownleft;
   if (showCountDown) {
@@ -262,7 +289,7 @@ function countDown() {
  * Timeleft is stored to resume the countdown after play button wass hit
  */
 function pauseCountdown() {
-  console.log("nothing is happening");
+  printLog("nothing is happening");
   clearInterval(countdownTimer);
   countdownleft = counter;
   meditationTimeElem.innerHTML = counter;
@@ -277,9 +304,7 @@ function startTimer() {
   meditationTimer = setInterval(function () {
     // trying to also be prepared for unexpected edge cases in the if statement since meditationeProgress should never be smaller 0
     if (meditationProgress <= 0) {
-      progress =
-        outlineLength - (currentTime / meditationDuration) * outlineLength;
-      outline.style.strokeDashoffset = progress;
+      caluclateProgress();
       clearInterval(meditationTimer);
       endSound.play();
       meditationTimeElem.innerHTML = `Seize the day!`;
@@ -292,21 +317,29 @@ function startTimer() {
       showCountDown = true;
       counter = 3;
     } else {
-      progress =
-        outlineLength - (currentTime / meditationDuration) * outlineLength;
-      outline.style.strokeDashoffset = progress;
-      console.log(progress);
-      console.log(currentTime);
-      console.log(meditationProgress);
-      console.log(meditationTimer);
-      meditationTimeElem.innerHTML = `${Math.floor(
-        meditationProgress / 60
-      )}:${Math.floor(meditationProgress % 60)}`;
+      caluclateProgress();
+      printLog(progress);
+      printLog(currentTime);
+      printLog(meditationProgress);
+      printLog(meditationTimer);
+      meditationTimeElem.innerHTML = formatDuration(meditationProgress);
       meditationProgress -= 1;
       currentTime += 1;
     }
   }, 1000);
 }
+
+/**
+ * Calculate Progress
+ * @param {} message
+ */
+
+function caluclateProgress() {
+  progress = outlineLength - (currentTime / meditationDuration) * outlineLength;
+  outline.style.strokeDashoffset = progress;
+}
+
+
 
 /**
  * Stopping the Timer if the settings are changed while the timer is running
@@ -341,28 +374,26 @@ function pauseTimer() {
   clearInterval(meditationTimer);
   timeLeft = meditationProgress;
   progressStatus = progress;
-  meditationTimeElem.innerHTML = `${Math.floor(timeLeft / 60)}:${Math.floor(
-    timeLeft % 60
-  )}`;
+  meditationTimeElem.innerHTML = formatDuration(timeLeft);
 }
 
 /**
  * Depending on the day of time 0-12 and 12-24 a different background is presented
- * @param {Integer} currentHour 
+ * @param {Integer} currentHour
  */
 
 function timeSensitivBackground(currentHour) {
-  console.log("current hours", currentHour);
+  printLog("current hours", currentHour);
   if (currentHour >= 0 && currentHour < 12) {
     // after Midnight and before 12:00PM
     document.getElementById("myDiv").style.backgroundImage =
       "url('assets/media/img/sunrise.jpg')";
-    console.log("its morning");
+    printLog("its morning");
   } else if (currentHour >= 12) {
     // after 12:00PM and befor Midnight
     document.getElementById("myDiv").style.backgroundImage =
       "url('assets/media/img/afternoon.jpg')";
-    console.log("its afternoon");
+    printLog("its afternoon");
   }
 }
 
@@ -421,6 +452,7 @@ function dateSetup() {
 /**
  * Define the various date variables
  */
+
 function setDates() {
   currDate = new Date();
   currYear = currDate.getFullYear();
@@ -451,7 +483,7 @@ function setOneDayAgo() {
   oneDayAgo = currYear + "-" + currMonth + "-" + (currDay - 1);
 }
 
-/** 
+/**
  * Sets a date value for the last day completed in from the localStorage, or marks it as Never.
  * Set a value for consecutives days from the localStorage, or define it as Never
  */
@@ -468,48 +500,48 @@ function streakInit() {
 }
 
 /**
- * Controlls the 
+ * Controlls the
  */
 function mediStreak() {
   localStorage.setItem("dateLastDone", todayDate);
-  // if streak is 6 the user reached a full week --> Streak completed and congratz shown 
+  // if streak is 6 the user reached a full week --> Streak completed and congratz shown
   if (streak == 6) {
     streak += 1;
-    console.log("Congratz");
+    printLog("Congratz");
     showCongratzPopup();
     streakReset();
-  // if streak is 0 the user just completed her first meditation 
+    // if streak is 0 the user just completed her first meditation
   } else if (streak === 0) {
-    console.log("you did it the first time");
+    printLog("you did it the first time");
     streak += 1;
     updateStreakData(streak);
     dateLastDone = localStorage.getItem("dateLastDone", todayDate);
-  // if streak bigger than 0 and dateLastDone from the localStorage are equal a succesful attempt is undertaken
+    // if streak bigger than 0 and dateLastDone from the localStorage are equal a succesful attempt is undertaken
   } else if (streak > 0 && dateLastDone == oneDayAgo) {
-    console.log("you are getting there");
+    printLog("you are getting there");
     streak += 1;
     updateStreakData(streak);
     dateLastDone = localStorage.getItem("dateLastDone", todayDate);
-  // if streak bigger than 0 and dateLastDone equal to todays date the streak does not get increased
+    // if streak bigger than 0 and dateLastDone equal to todays date the streak does not get increased
   } else if (streak > 0 && dateLastDone == todayDate) {
-    console.log("you already did it today");
-    updateStreakData(streak);  
-  // if none of the above works, the checkStreak() function is called to see if the streak was broken
+    printLog("you already did it today");
+    updateStreakData(streak);
+    // if none of the above works, the checkStreak() function is called to see if the streak was broken
   } else checkStreak();
 }
 /**
  * Compare the dates and see if the day-to-day streak was failed to complete
  */
 function checkStreak() {
-  console.log("dateLastDone:", dateLastDone);
-  console.log("oneDayAgo:", oneDayAgo);
-  console.log("todayDate", todayDate);
+  printLog("dateLastDone:", dateLastDone);
+  printLog("oneDayAgo:", oneDayAgo);
+  printLog("todayDate", todayDate);
   if (dateLastDone != oneDayAgo && dateLastDone != todayDate) {
-    console.log("seems you didnt make it");
+    printLog("seems you didnt make it");
     streakReset();
     return false;
   } else {
-    console.log("you are on a run");
+    printLog("you are on a run");
     return true;
   }
 }
@@ -570,7 +602,7 @@ function controlAmbientSound() {
 }
 
 /**
- *  Update Sound Volume 
+ *  Update Sound Volume
  */
 
 function updateVolume() {
