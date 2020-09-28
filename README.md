@@ -187,6 +187,7 @@ Testing Methods
 * Fixed Bugs & Issues:
 ** Sound on Safari (switched from SoundManager2 to Howler.js)
 ** Location of the play/pause button due to absolute positioning
+** Setup of PWA was tricky due to routing of github pages - solution was adapted from https://gist.github.com/kosamari/7c5d1e8449b2fbc97d372675f16b566e
 
 * Open Issues:
 ** landscape view an mobile devices

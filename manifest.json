@@ -2,27 +2,29 @@
   "name": "Zengarden",
   "short_name": "zengarden",
   "icons": [{
-      "src": "assets/media/img/favicon_io/zenapple.png",
+      "src": "/zengarden/assets/media/img/favicon_io/zenapple.png",
       "sizes": "180x180",
       "type": "image/png"
     }, {
-      "src": "assets/media/img/favicon_io/zen192x192.png",
+      "src": "/zengarden/assets/media/img/favicon_io/zen192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },{
-      "src": "assets/media/img/favicon_io/maskable_icon.png",
+      "src": "/zengarden/assets/media/img/favicon_io/maskable_icon.png",
       "sizes": "196x196",
       "type": "image/png",
       "purpose": "maskable"
     }, {
-      "src": "assets/media/img/favicon_io/zen512x512.png",
+      "src": "/zengarden/assets/media/img/favicon_io/zen512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }],
   "lang": "en-US",
   "description": "Find time to meditate and track your progress",
-  "start_url": "/index.html",
+  "start_url": "/zengarden/index.html",
+  "scope": "/zengarden/",
   "display": "standalone",
   "background_color": "grey",
-  "theme_color": "white"
+  "theme_color": "#ff6000",
+  "orientation": "portrait"
 }
