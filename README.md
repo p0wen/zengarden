@@ -1,50 +1,55 @@
 # Zen Garden
 
-minimalistic meditation timer to help you find your zen fast
+_"Zen Garden is a minimalistic Meditation-Timer to help you find your zen moment fast"_
 
---> insert gif animation from amiresponsive
---> insert Link and comment where site is deployed
---> insert link to meditation
+[![Portofolio View](https://github.com/p0wen/zengarden/blob/master/assets/media/img/portfolioview.gif?raw=true "Zen Garden Demo")](https://p0wen.github.io/zengarden/ "Zen Garden")
  
+___
 ## UX
 
-Purpose
-- relieve stress
-- increase well being
-- stress in everyday life
-- hard to find time to sit still
-- meditate myself and find it very positive
-- idea to build something that i can use myself and help others to get into the practice seemed compelling
+### Purpose
+The purpose of this Web-App is to allow people to track their meditation habits and have reliable timer to take the desired time off. Meditation is an effective method to relieve stress and increase well being. In our busy and stressful everday life it is often hard to find time to sit still and just take a deep breath. Due to my own experiences of meditating everyday and using various timers i had the motivation to build something that i can use myself and enable others to get the chance to benefit from a daily meditation.
  
-Who?
-- site is targeted to users who now basic principles or practices of meditation who are looking for a solution to track their meditation time
+### Who?
 
-Why?
-- eventhou it would be great to have unlimited time for meditation like a zen monk everyday life has its demands and we can often only slice a couple of minutes out of the day
-- therefor the timer helps to enjoy the meditation sitting without worrying about meditating too long or too short
+The WebApp is targeted to users who now basic principles or practices of meditation and who are looking for a solution to track their meditation time and have a motivation to keep up the day-to-day sessions by tracking their streak.
 
-What?
-- core feature functionality of this site is to provide an meditation timer
-- start of a session and is signaled by nice bell sound
-- user has the option to activate ambient sound, choose the prefered meditation time (5, 10, 15, 20 Minutes) and a background
+### Why a timer?
+
+Even though it would be great to have unlimited time for meditation like a zen monk, everyday life has its demands and we can often only slice a couple of minutes out of the day. Therefore the timer helps to enjoy the meditation sitting without worrying about meditating too long or too short. Since phone timers often have awkward timer sounds that are not sensitive the use of compelling gong sounds start and end the session itself.
+
+### What?
+
+ The core functionaly of this WebApp is to provide an meditation timer. It allows the user to start a session, which is signaled by a gentle gong sound. Furthermore the user has the option to activate/deactive an ambient sound, choose the prefered meditation time (5, 10, 15, 20 Minutes) and a background image. Additionally the WebApp tracks the day-to-day interactions and allows the user to track his/her meditation streak.
 
 ### User Stories 
 
-* As a meditator i want to choose between longer and shorter sessions, so that i can accustom my practice to my liking.
-* As a mediator i want to have a count down button after starting the mediation, so that i have time to close my eyes and adjust my seating before the "real" practice starts.
+The following user stories where defined before the development:
+* As a meditator i want to choose between longer and shorter sessions, so that i can adjust my practice to my liking.
+* As a mediator i want to have a countdown button after starting the mediation, so that i have time to close my eyes and adjust my seating before the "real" practice starts.
 * As a meditator i want to be able to start / stop the timer, so that i can react to interruptions.
 * As a meditator i want to be informed when a session is done, so that i know when my time is up.
-* As a meditator i want to be able to activate / deactivate whitenoise, so that i have the chance to focus on my meditation in noisy surroundings
-* As a mediator i want to keep track of my day-to-day practice, so i keep being motivated even on days where my energy is low
+* As a meditator i want to be able to activate / deactivate whitenoise, so that i have the chance to focus on my meditation in noisy surroundings.
+* As a mediator i want to keep track of my day-to-day practice, so i keep being motivated even on days where my energy is low.
 * As a meditator i want to see inspiration quotes, so that my mind has something to ponder on during my day.
 * As a meditator i want to have beautiful backgrounds, so that my mind is in a positive state.
 
 ### Wireframes
 
-* wireframes where designed with balsamiq and can be found here:
+The wireframes were sketched in Balsamiq Mockups and can be found [here](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes) or following the direct links:
 
-* wireframes vs finished project
---> Add table with comparison
+[![Zen Garden](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/ZenGardenApp.jpg "Zen Garden")](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/ZenGardenApp.jpg)
+
+[![Zen Garden - Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/ZenGardenSet.jpg "Zen Garden - Settings")](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/ZenGardenSet.jpg)
+
+#### Wireframes vs Finished project
+
+|                 | Planned           | Result            | Reasoning   |
+|-----------------|-------------------|-------------------|-------------|
+| Web Landing     | insert screenshot | insert screenshot | * a * b * c |
+| Mobile Landing  | insert screenshot | insert screenshot | * a * b * c |
+| Web Settings    | insert screenshot | insert screenshot | * a * b * c |
+| Mobile Settings | insert screenshot | insert screenshot | * a * b * c |
 
 ### UI-Design
 
