@@ -37,20 +37,20 @@ The following user stories where defined before the development:
 
 ## Wireframes
 
-The wireframes were sketched in Balsamiq Mockups and can be found [here](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes) or following the direct links:
+The wireframes were sketched in Balsamiq Mockups and can be found [here](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes) or following the direct links:
 
-[![Zen Garden](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/ZenGardenApp.jpg?raw=true "Zen Garden")](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/ZenGardenApp.jpg)
+[![Zen Garden](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/ZenGardenApp.jpg?raw=true "Zen Garden")](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/ZenGardenApp.jpg)
 
-[![Zen Garden - Settings](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/ZenGardenSet.jpg?raw=true "Zen Garden - Settings")](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/ZenGardenSet.jpg)
+[![Zen Garden - Settings](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/ZenGardenSet.jpg?raw=true "Zen Garden - Settings")](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/ZenGardenSet.jpg)
 
 #### Wireframes vs Finished project
 
 |                 | Planned           | Result            | Reasoning   |
 |-----------------|-------------------|-------------------|-------------|
-| Web Landing     | ![Zen Garden -  Web](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_web.png?raw=true "ZenGarden") | ![Zen Garden - Final Web](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_fin_web.png?raw=true "Zen Garden Final") | * progressbar exchanged for animated outline * left out warmup/cooldown options * included settingsbutton |
-| Mobile Landing  | ![Zen Garden - Mob](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_mob.png?raw=true) | ![Zen Garden - Final Mob](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_fin_mob.png?raw=true) | * exchanged progressbar for animated circle to track progress |
-| Web Settings    | ![Zen Garden - Web Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_web_set.png?raw=true) | ![Zen Garden - Final Web Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_fin_web_set.png?raw=true) | * left out warm-up/cool-down option * only provided on/off switch for white noise and used bell as a default * reminder bell was excluded * added option for a random background * used morning/afternoon background |
-| Mobile Settings | ![Zen Garden - Mob Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_mob_set.png?raw=true) | ![Zen Garden - Final Mob Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/zengarden_fin_mob_sets.png?raw=true) | (see websettings) |
+| Web Landing     | ![Zen Garden -  Web](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/zengarden_web.png?raw=true "ZenGarden") | ![Zen Garden - Final Web](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/zengarden_fin_web.png?raw=true "Zen Garden Final") | * progressbar exchanged for animated outline * left out warmup/cooldown options * included settingsbutton |
+| Mobile Landing  | ![Zen Garden - Mob](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/zengarden_mob.png?raw=true) | ![Zen Garden - Final Mob](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/zengarden_fin_mob.png?raw=true) | * exchanged progressbar for animated circle to track progress |
+| Web Settings    | ![Zen Garden - Web Settings](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/zengarden_web_set.png?raw=true) | ![Zen Garden - Final Web Settings](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/zengarden_fin_web_set.png?raw=true) | * left out warm-up/cool-down option * only provided on/off switch for white noise and used bell as a default * reminder bell was excluded * added option for a random background * used morning/afternoon background |
+| Mobile Settings | ![Zen Garden - Mob Settings](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/zengarden_mob_set.png?raw=true) | ![Zen Garden - Final Mob Settings](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/zengarden_fin_mob_set.png?raw=true) | (see websettings) |
 
 
 ## UI-Design
@@ -166,23 +166,23 @@ Jasmine used to set up tests. Some example test where written but should be exte
 
 #### Testing Protocol
 1. Start Stop of Timer  
-   ![Start / Stop Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/startstop.gif?raw=true)  
-   ![Start / Stop Countdown](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/countdown.gif?raw=true)
+   ![Start / Stop Control](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/startstop.gif?raw=true)
+   ![Start / Stop Countdown](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/countdown.gif?raw=true)
 2. Entering Settings while no mediation is running
 3. Entering Settings while meditation is running
 4. Switching Meditation-Duration while no mediation is running  
-   ![Time Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/switchinactive.gif?raw=true)
+   ![Time Control](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/switchinactive.gif?raw=true)
 5. Switching Meditation-Duration while Timer is playing  
-   ![Time Control while Active](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/switchwhilemed.gif?raw=true)
+   ![Time Control while Active](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/switchwhilemed.gif?raw=true)
 6. Switch background  
-   ![Background Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/backgroundswitch.gif?raw=true)
+   ![Background Control](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/backgroundswitch.gif?raw=true)
 7. Activate/Deactivate White-Noise & Change Volume of White-Noise  
-   ![Sound Control](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/soundcontrol.gif?raw=true)
+   ![Sound Control](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/soundcontrol.gif?raw=true)
 9. Check Streak Logic after one missed day
 10. Check Streak Logic over 7 days  
-   ![7 Day Streak](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/7daystreak.gif?raw=true)
+   ![7 Day Streak](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/7daystreak.gif?raw=true)
 11. Testing if Service Worker is running  
-   ![Service Worker](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/serviceworker.png?raw=true)
+   ![Service Worker](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/serviceworker.png?raw=true)
 
 
 #### Testing Methods
@@ -202,14 +202,14 @@ Jasmine used to set up tests. Some example test where written but should be exte
 ** Used to make sure that no obvious html mistakes are made
 ** fixed wrong data-attribute on buttons
 ** removed unused code
-![Zen Garden - Final Mob Settings](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/w3validator.png?raw=true)
+![Zen Garden - Final Mob Settings](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/w3validator.png?raw=true)
 * CSS Validator https://jigsaw.w3.org/css-validator/
 * JS Hint (https://jshint.com/)
 ** Used to remove unused variables and check for mistakes
-![JS Hint Results](https://github.com/p0wen/zengarden/tree/master/assets/media/test_results/jshint.png?raw=true) 
+![JS Hint Results](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/jshint.png?raw=true) 
 * Lighthouse (https://developers.google.com/web/tools/lighthouse)
 ** Used the validator to improve Performance, Accessibility, Best Practices, SEO and Progress Web App Setup
-![Light House Results](https://github.com/p0wen/zengarden/tree/master/assets/media/wireframes/lighthousresults.png?raw=true)raw=true)
+![Light House Results](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/lighthousresults.png?raw=true)raw=true)
 * Troy (http://troy.labs.daum.net/)
 ** tested layout on different device sizes
 * caniuse.com
