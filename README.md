@@ -187,12 +187,12 @@ Jasmine used to set up tests. Some example test where written but should be exte
 
 #### Testing Methods
 * Browser Compatability 
-** Chrome
-** Safari
-** Brave
+   Chrome
+   Safari
+   Brave
 * Device Compatibility
-** iPhone 11 Pro
-** iPad
+   iPhone 11 Pro
+   iPad
 * Friends and Family Testing
 * Peer-Review in CI #slack 
 
@@ -265,6 +265,8 @@ If you want to deploy the site to githubpages yourself, you will need to adjust 
 * youtube.com
 * stackoverflow.com
 * medium.com
+* css-tricks.com
+* https://webkit.org/
 
 ### Media
 
