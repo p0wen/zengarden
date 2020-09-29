@@ -279,18 +279,20 @@ input:checked + .slider:before {
 }
 
 @media all and (max-height: 414px) and (orientation: landscape) {
+ /** https://webkit.org/blog/7929/designing-websites-for-iphone-x/ **/
+  @supports (padding: max(0px)) {
+    .app {
+      padding-left: max(12px, env(safe-area-inset-left));
+      padding-right: max(12px, env(safe-area-inset-right));
+      font-size: 0.9rem;
+    }
+  }
   .streakbar {
     padding: 0rem;
     height: calc(20 * var(--vh));
   }
   .quote {
     height: calc(25 * var(--vh));
-    font-size: 0.9rem;
-  }
-  .appname {
-    padding-right: 27px;
-    padding-left: 27px;
-    padding-top: 5px;
   }
   .starttimer {
     font-size: 1.5rem;
@@ -298,6 +300,6 @@ input:checked + .slider:before {
   }
   .meditationtime {
     font-size: 1.5rem;
-    transform:translate(0%, 100%)
+    transform: translate(0%, 100%);
   }
 }
