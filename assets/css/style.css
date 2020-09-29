@@ -4,13 +4,6 @@
     --vh: 614px;
 }
 
-@supports(padding: max(0px)) {
-    .post {
-        padding-left: max(12px, env(safe-area-inset-left));
-        padding-right: max(12px, env(safe-area-inset-right));
-    }
-}
-
 .appview {
     position: fixed;
     top: 0;
@@ -35,7 +28,7 @@
 
 .toolbar {
   /* background: lightcoral; */
-  height: 5vh;
+  height: calc(5 * var(--vh));;
 }
 
 .quote,
@@ -53,7 +46,7 @@
 
 .quote {
   /* background: lightsalmon; */
-  height: 25vh;
+  height: calc(25 * var(--vh));;
   font-size: 1rem;
   padding-top: 10px;
 }
@@ -64,7 +57,7 @@
 
 .playershell  {
   /* background: lightseagreen; */
-  height: 50vh;
+  height: calc(50 * var(--vh));;
 }
 
 .streak {
@@ -155,7 +148,7 @@ button:focus {
 
 .streakbar {
   padding-top: 1rem;
-  height: 20vh;
+  height: calc(20 * var(--vh));
 }
 /* Toggle for Sound https://www.w3schools.com/howto/howto_css_switch.asp */
 
