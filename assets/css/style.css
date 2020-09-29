@@ -1,11 +1,22 @@
 /* Main Page */
+.html {
+    height: 100%;
+    --vh: 614px;
+}
+
+@supports(padding: max(0px)) {
+    .post {
+        padding-left: max(12px, env(safe-area-inset-left));
+        padding-right: max(12px, env(safe-area-inset-right));
+    }
+}
 
 .appview {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: calc(100 * var(--vh));;
     z-index: -1;
 }
 .app {

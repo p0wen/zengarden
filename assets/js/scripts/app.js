@@ -20,6 +20,11 @@ if ("serviceWorker" in navigator) {
   });
 }
 
+window.addEventListener('resize', () => { 
+  document.querySelector(':root').style
+    .setProperty('--vh', window.innerHeight/100 + 'px');
+})
+
 //get today's date for all kinds of function
 let currentHour = new Date().getHours();
 let currDate = new Date();
