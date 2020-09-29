@@ -286,6 +286,12 @@ input:checked + .slider:before {
       padding-right: max(12px, env(safe-area-inset-right));
       font-size: 0.9rem;
     }
+    .quote {
+        padding-top: 0px;
+    }
+    .quote div p {
+        margin-bottom: 0rem;
+    }
   }
   .streakbar {
     padding: 0rem;
