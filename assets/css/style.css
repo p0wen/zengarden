@@ -1,7 +1,7 @@
 /* Main Page */
 .html {
     height: 100%;
-    --vh: 614px;
+    --vh: 7.96px;
 }
 
 .appview {
@@ -9,7 +9,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100 * var(--vh));;
+    height: 100%;
+    height: calc(100 * var(--vh));
     z-index: -1;
 }
 .app {

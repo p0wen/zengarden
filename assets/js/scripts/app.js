@@ -20,10 +20,18 @@ if ("serviceWorker" in navigator) {
   });
 }
 
+/**
+ * Fix Viewport for mobile browser (https://dev.to/admitkard/mobile-issue-with-100vh-height-100-100vh-3-solutions-3nae)
+ */
+
 window.addEventListener('resize', () => { 
-  document.querySelector(':root').style
-    .setProperty('--vh', window.innerHeight/100 + 'px');
+ resizeView()
 })
+
+function resizeView() {
+ document.querySelector(':root').style
+    .setProperty('--vh', window.innerHeight/100 + 'px');
+}
 
 //get today's date for all kinds of function
 let currentHour = new Date().getHours();
@@ -137,6 +145,7 @@ outline.style.strokeDashoffset = outlineLength;
 // Initiliazation of the App
 
 function init() {
+  resizeView()
   dateSetup();
   timeSensitivBackground(currentHour);
   timerSettings();
