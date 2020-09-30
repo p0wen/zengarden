@@ -76,9 +76,9 @@ Roboto was used due to its "dual nature". On the one hand its clean and geometri
 * Ambient Sound can be activated/deactivated incl. volume controle
 * 7-Day-Streak
 * Background-Image can be switched (Morning, Afternoon, Random)
-* Warm Up & Cool-Down Time can be activated
 * Offline support
 * Progress Web App support
+* Warm Up & Cool-Down Time can be activated
  
 ### Finished Features
 
@@ -109,6 +109,25 @@ Roboto was used due to its "dual nature". On the one hand its clean and geometri
    in the setting modal the user has the chance to manually switch between morning, afternoon or a random background image.   
    random background image is pulled from unsplash (https://source.unsplash.com)
 
+* Offline support  
+   Service Worker has been integrated to store core files in the users storage
+   CacheName + CacheVersion can be used to control cacheUsage after Updates by increasing the version number
+
+* PWA support  
+   manifest was set up, so that it also allows the user to save the url to the homescreen and start it as an app from the homescreen
+   necessary logos in demanded sizes where designed and created
+   can be used as a standalone app
+
+#### How to use it as an standalone App on iPhone Devices?
+
+1. Open Safari
+2. Call https://p0wen.github.io/zengarden/ 
+2. Press "Share"-Button
+3. Choose "Add to Homescreen"
+4. Close Safari
+5. Look on Homescreen for an orange app icon called "Zen"
+
+
 ### Features/Changes for the Future
 
 * Warm Up & Cool-Down Time can be activated
@@ -130,7 +149,7 @@ Roboto was used due to its "dual nature". On the one hand its clean and geometri
 * CSS3
 * JavaScript
 
-### Frameworks, Libraries & Programs
+### Frameworks & Libraries 
 
 * Bootstrap 4.5.0  
    To make use of a responsive css-framework and to ensure mobile first approach.
@@ -144,6 +163,8 @@ Roboto was used due to its "dual nature". On the one hand its clean and geometri
    To make use of the Roboto Font
 * jQuery  
    Comes with Bootstrap
+
+### Programms 
 * Git  
    Version Control  
 * GitHub  
@@ -160,7 +181,7 @@ Roboto was used due to its "dual nature". On the one hand its clean and geometri
 
 ### Automatated Testing
 
-Jasmine used to set up tests. Some example test where written but should be extended more broadly in the future. Therefore i would make sense to refactor the existing functions to make them easier for testing.
+Jasmine used to set up tests. Some example test where written but should be extended more broadly in the future. Therefore it would make sense to refactor the existing functions to make them easier for testing.
 
 ### Manual Testing
 
@@ -186,11 +207,11 @@ Jasmine used to set up tests. Some example test where written but should be exte
 
 
 #### Testing Methods
-* Browser Compatability 
+* Browser Compatability  
    Chrome
    Safari
    Brave
-* Device Compatibility
+* Device Compatibility  
    iPhone 11 Pro
    iPad
 * Friends and Family Testing
@@ -202,14 +223,21 @@ Jasmine used to set up tests. Some example test where written but should be exte
    Used to make sure that no obvious html mistakes are made  
    fixed wrong data-attribute on buttons  
    removed unused code  
-![Zen Garden - Final Mob Settings](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/w3validator.png?raw=true)
-* CSS Validator https://jigsaw.w3.org/css-validator/
+![Zen Garden - w3c Validator](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/w3validator.png?raw=true)
+* CSS Validator https://jigsaw.w3.org/css-validator/  
+   Running the Site through the validator produced a lot of errors - even from the bootstrap library  
+   Only manually pasting my own css threw the following output  
+   Warnings and errors are mainly focusing on browser specific extensions
+   No changes were applied
+   ![Zen Garden - Css Validator](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/cssvalidator.png?raw=true)
 * JS Hint (https://jshint.com/)  
    Used to remove unused variables and check for mistakes  
+   Howl was found since the howler.js libarary is called in the index.html and wasn't included in the file  
+   controlAmbientSound & updateVolume are used on the buttons and not in the app.js file itself
 ![JS Hint Results](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/jshint.png?raw=true) 
 * Lighthouse (https://developers.google.com/web/tools/lighthouse)  
    Used the validator to improve Performance, Accessibility, Best Practices, SEO and Progress Web App Setup  
-![Light House Results](https://github.com/p0wen/zengarden/blob/master/assets/media/wireframes/lighthousresults.png?raw=true)raw=true)
+![Light House Results](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/lighthouseresults.png?raw=true)
 * Troy (http://troy.labs.daum.net/)
    tested layout on different device sizes
 * caniuse.com  
@@ -223,7 +251,16 @@ Jasmine used to set up tests. Some example test where written but should be exte
    Setup of PWA was tricky due to routing of github pages - solution was adapted from https://gist.github.com/kosamari/c5d1e8449b2fbc97d372675f16b566e
 
 * Open Issues:  
-   landscape view an mobile devices - App intended to be used in portrait mode
+   landscape view on mobile devices (especially iOS X Devices) still not 100%
+
+#### Making the Site work on an iPhone 11 
+Before:
+![iPhone Support Before](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/appinlandscape.jpg?raw=true)
+
+The site has problems with safari (and also chrome) and the viewheight calculation. The mobile browsers decided to calculate the viewheight incl. the bottom toolbar, which disappears when scrolling. Therefore content often hides behind the toolbar which is especially problematic when its a single page site. The solution which i found after hours of research and stackoverflow reading is to calculate the innerHeight of the screen and use it as a variable for the css height calculation. The innerHeight gets calculated on every resize action. Landscape mode made this even trickier with the notch. Removing the white bars in landscape mode and to allow fullscreen view pushed content behind the notch. Hence safety margins for Devices in Landscape mode and small screens where introduced. The solution is good but not perfect. The parent element displays content over the full screen width. However the grey masking of images is assigned to the content elements which use a different width and therefore not the whole screen is perfectly displayed on landscapemode. Many attemps with safari debugger and debugging the iPhone helped to make it better, unfortuantely it could not be resolved completly.
+
+After:
+![iPhone Support Before](https://github.com/p0wen/zengarden/blob/master/assets/media/test_results/appinlandscapefixed.PNG?raw=true)
 
 ____ 
 ## Deployment
@@ -254,6 +291,8 @@ If you want to deploy the site to githubpages yourself, you will need to adjust 
 #### Option B: Fork the repository (also see https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo):
 * Navigate to Mainpage of the repository
 * Click Fork in the top-right corner
+
+#### Option C: Download zip file form Github
 
 ## Credits
 
