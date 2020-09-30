@@ -208,11 +208,11 @@ Jasmine used to set up tests. Some example test where written but should be exte
 
 #### Testing Methods
 * Browser Compatability  
-   Chrome
-   Safari
+   Chrome  
+   Safari  
    Brave
 * Device Compatibility  
-   iPhone 11 Pro
+   iPhone 11 Pro  
    iPad
 * Friends and Family Testing
 * Peer-Review in CI #slack 
