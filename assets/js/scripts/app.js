@@ -24,13 +24,14 @@ if ("serviceWorker" in navigator) {
  * Fix Viewport for mobile browser (https://dev.to/admitkard/mobile-issue-with-100vh-height-100-100vh-3-solutions-3nae)
  */
 
-window.addEventListener('resize', () => { 
- resizeView()
-})
+window.addEventListener("resize", () => {
+  resizeView();
+});
 
 function resizeView() {
- document.querySelector(':root').style
-    .setProperty('--vh', window.innerHeight/100 + 'px');
+  document
+    .querySelector(":root")
+    .style.setProperty("--vh", window.innerHeight / 100 + "px");
 }
 
 //get today's date for all kinds of function
@@ -145,7 +146,7 @@ outline.style.strokeDashoffset = outlineLength;
 // Initiliazation of the App
 
 function init() {
-  resizeView()
+  resizeView();
   dateSetup();
   timeSensitivBackground(currentHour);
   timerSettings();
@@ -171,7 +172,6 @@ function printLog(message) {
 /**
  * Setup the Timer after changes are made in the Modal Settings by the user
  */
-
 
 function timerSettings() {
   meditationTimeElem.textContent = formatDuration(meditationDuration);
@@ -353,8 +353,6 @@ function calculateProgress() {
   progress = outlineLength - (currentTime / meditationDuration) * outlineLength;
   outline.style.strokeDashoffset = progress;
 }
-
-
 
 /**
  * Stopping the Timer if the settings are changed while the timer is running

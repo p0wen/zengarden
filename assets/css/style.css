@@ -279,7 +279,7 @@ input:checked + .slider:before {
 }
 
 @media all and (max-height: 414px) and (orientation: landscape) {
- /** https://webkit.org/blog/7929/designing-websites-for-iphone-x/ **/
+  /** https://webkit.org/blog/7929/designing-websites-for-iphone-x/ **/
   @supports (padding: max(0px)) {
     .app {
       padding-left: max(12px, env(safe-area-inset-left));
@@ -287,10 +287,10 @@ input:checked + .slider:before {
       font-size: 0.9rem;
     }
     .quote {
-        padding-top: 0px;
+      padding-top: 0px;
     }
     .quote div p {
-        margin-bottom: 0rem;
+      margin-bottom: 0rem;
     }
   }
   .streakbar {
