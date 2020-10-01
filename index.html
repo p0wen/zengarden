@@ -2,262 +2,192 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="Description"
-		content="Zengarden delivers a high quality and minimalistic timer function to help everyone to focus on what really matters." />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-	<link rel="stylesheet" href="assets/css/style.css" />
-	<link rel="manifest" href="manifest.json" />
-	<meta name="theme-color" content="white" />
-	<link rel="icon" href="favicon.ico" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="assets/media/img/favicon_io/zenapple.png" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta name="apple-mobile-web-app-title" content="ZenGarden" />
-	<meta name="msapplication-TileImage" content="assets/media/img/favicon_io/zen32x32.png" />
-	<meta name="msapplication-TileColor" content="#FFFFFF" />
-	<title>Zen Garden</title>
+  <meta charset="UTF-8" />
+  <meta name="Description" content="Zengarden delivers a high quality and minimalistic timer function to help everyone to focus on what really matters."
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="white" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/media/img/favicon_io/zenapple.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="ZenGarden" />
+  <meta name="msapplication-TileImage" content="assets/media/img/favicon_io/zen32x32.png" />
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <title>Zen Garden</title>
 </head>
 
 <body class="appview">
-	<div class="app container-fluid" id="myDiv">
-		<!-- Logo & Settings Section-->
-		<div class="row toolbar greyfilter">
-			<div class="col-8 appname">
-				<p><i class="fas fa-wind"></i> Zen Garden</p>
-				<p></p>
-			</div>
+  <div class="app container-fluid" id="myDiv">
+    <!-- Logo & Settings Section-->
+    <div class="row toolbar greyfilter">
+      <div class="col-8 appname">
+        <p><i class="fas fa-wind"></i> Zen Garden</p>
+        <p></p>
+      </div>
 
-			<div class="col-4 settingsicon">
-				<a class="settingstoggle" href="#settingsModal" data-toggle="modal"
-					data-target="#settingsModal"><span class="fas fa-cogs"></span></a>
-			</div>
-		</div>
-		<!-- Quotes Section-->
-		<div class="row quote greyfilter">
-			<div class="col">
-				<p class="quoteheading">Quote of the Day:</p>
-				<p class="quotetext"></p>
-				<p class="author"></p>
-			</div>
-		</div>
-		<!-- Meditation Timer Section (Circle, Play/Pause, Timer) -->
-		<div class="row greyfilter playershell">
-			<div class="player-container">
-				<div class="circle">
-					<svg class="track-outline" width="" height="453" viewbox="0 0 453 453" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<circle cx="226.5" cy="226.5" r="216.5" stroke="white" stroke-width="20" />
-					</svg>
-					<svg class="moving-outline" width="453" height="453" viewbox="0 0 453 453" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<circle cx="226.5" cy="226.5" r="216.5" stroke="#ff6000" stroke-width="20" />
-					</svg>
-				</div>
-				<button
-            type="button"
-            class="starttimer"
-            data-status="stopped"
-            aria-label="Start Button"
-          >
-            <i class="fas fa-play"></i>
+      <div class="col-4 settingsicon">
+        <a class="settingstoggle" href="#settingsModal" data-toggle="modal" data-target="#settingsModal"><span class="fas fa-cogs"></span></a>
+      </div>
+    </div>
+    <!-- Quotes Section-->
+    <div class="row quote greyfilter">
+      <div class="col">
+        <p class="quoteheading">Quote of the Day:</p>
+        <p class="quotetext"></p>
+        <p class="author"></p>
+      </div>
+    </div>
+    <!-- Meditation Timer Section (Circle, Play/Pause, Timer) -->
+    <div class="row greyfilter playershell">
+      <div class="player-container">
+        <div class="circle">
+          <svg class="track-outline" width="" height="453" viewbox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="226.5" cy="226.5" r="216.5" stroke="white" stroke-width="20" />
+          </svg>
+          <svg class="moving-outline" width="453" height="453" viewbox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="226.5" cy="226.5" r="216.5" stroke="#ff6000" stroke-width="20" />
+          </svg>
+        </div>
+        <button type="button" class="starttimer" data-status="stopped" aria-label="Start Button">
+          <i class="fas fa-play"></i>
+        </button>
+        <p class="meditationtime"></p>
+      </div>
+    </div>
+    <!-- Streakbar -->
+    <div class="row streakbar greyfilter">
+      <div class="col">
+        <div class="row streak">Streak</div>
+        <div class="row streak" id="streakbar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal-->
+  <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLable" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="settingsModalLable">Settings</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
           </button>
-				<p class="meditationtime"></p>
-			</div>
-		</div>
-		<!-- Streakbar -->
-		<div class="row streakbar greyfilter">
-			<div class="col">
-				<div class="row streak">Streak</div>
-				<div class="row streak" id="streakbar"></div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Settings Modal-->
-	<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLable"
-		aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="settingsModalLable">Settings</h5>
-					<button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-				</div>
-				<div class="modal-body">
-					<!-- Choosing Meditation Duration -->
-					<div class="timersettings">
-						<h5>Timer</h5>
-						<div class="timersettings">
-							<span>Meditation Time:</span><br />
-							<div class="btn-group meditationduration" role="group" aria-label="Meditation Timer">
-								<button
-                    type="button"
-                    class="btn btn-light"
-                    data-time="300"
-                    aria-label="5 Min. Meditation"
-                  >
-                    5 Min.
+        </div>
+        <div class="modal-body">
+          <!-- Choosing Meditation Duration -->
+          <div class="timersettings">
+            <h5>Timer</h5>
+            <div class="timersettings">
+              <span>Meditation Time:</span>
+              <br />
+              <div class="btn-group meditationduration" role="group" aria-label="Meditation Timer">
+                <button type="button" class="btn btn-light" data-time="300" aria-label="5 Min. Meditation">
+                  5 Min.
+                </button>
+                <button type="button" class="btn btn-light" data-time="600" aria-label="10 Min. Meditation">
+                  10 Min.
+                </button>
+                <button type="button" class="btn btn-light active" data-time="900" aria-label="15 Min. Meditation">
+                  15 Min.
+                </button>
+                <button type="button" class="btn btn-light" data-time="1200" aria-label="20 Min. Meditation">
+                  20 Min.
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- Control Sound and Volume -->
+          <div class="soundsettings">
+            <h5>Ambient Sounds</h5>
+            <div class="row">
+              <div class="col whitenoise">Whitenoise</div>
+              <div class="col">
+                <label class="switch">
+                  <input type="checkbox" id="ambiSound" onclick="controlAmbientSound()" checked aria-label="White Noise On/Off" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+            <div class="row volume slidecontainer">
+              <div class="col">Volume</div>
+              <div class="col">
+                <input oninput="updateVolume(this.value)" type="range" min="0" max="1" step="0.01" value="0.5" class="volumeslider" id="myRange"
+                aria-label="Volume Control" />
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- Setting the Background-->
+          <div class="backgroundsettings changebackground">
+            <h5>Background</h5>
+            <div class="row">
+              <div class="col">
+                <div class="row backgroundicon">
+                  <button type="button" class="btng" data-bg="morning" aria-label="Morning Background">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
                   </button>
-								<button
-                    type="button"
-                    class="btn btn-light"
-                    data-time="600"
-                    aria-label="10 Min. Meditation"
-                  >
-                    10 Min.
-                  </button>
-								<button
-                    type="button"
-                    class="btn btn-light active"
-                    data-time="900"
-                    aria-label="15 Min. Meditation"
-                  >
-                    15 Min.
-                  </button>
-								<button
-                    type="button"
-                    class="btn btn-light"
-                    data-time="1200"
-                    aria-label="20 Min. Meditation"
-                  >
-                    20 Min.
-                  </button>
-							</div>
-						</div>
-					</div>
-					<hr />
-					<!-- Control Sound and Volume -->
-					<div class="soundsettings">
-						<h5>Ambient Sounds</h5>
-						<div class="row">
-							<div class="col whitenoise">Whitenoise</div>
-							<div class="col">
-								<label class="switch">
-                    <input
-                      type="checkbox"
-                      id="ambiSound"
-                      onclick="controlAmbientSound()"
-                      checked
-                      aria-label="White Noise On/Off"
-                    />
-                    <span class="slider round"></span>
-                  </label>
-							</div>
-						</div>
-						<div class="row volume slidecontainer">
-							<div class="col">Volume</div>
-							<div class="col">
-								<input
-                    oninput="updateVolume(this.value)"
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.01"
-                    value="0.5"
-                    class="volumeslider"
-                    id="myRange"
-                    aria-label="Volume Control"
-                  />
                 </div>
-							</div>
-						</div>
-						<hr />
-						<!-- Setting the Background-->
-						<div class="backgroundsettings changebackground">
-							<h5>Background</h5>
-							<div class="row">
-								<div class="col">
-									<div class="row backgroundicon">
-										<button
-                      type="button"
-                      class="btng"
-                      data-bg="morning"
-                      aria-label="Morning Background"
-                    >
-                      <i class="fas fa-sun" aria-hidden="true"></i>
-                    </button>
-									</div>
-									<div class="row backgroundtext">Morning</div>
-								</div>
-								<div class="col">
-									<div class="row backgroundicon">
-										<button
-                      type="button"
-                      class="btng"
-                      data-bg="afternoon"
-                      aria-label="Afternoon Background"
-                    >
-                      <i class="fas fa-moon" aria-hidden="true"></i>
-                    </button>
-									</div>
-									<div class="row backgroundtext">Afternoon</div>
-								</div>
-								<div class="col">
-									<div class="row backgroundicon">
-										<button
-                      type="button"
-                      class="btng"
-                      data-bg="random"
-                      aria-label="Random Background"
-                    >
-                      <i class="fas fa-random" aria-hidden="true"></i>
-                    </button>
-									</div>
-									<div class="row backgroundtext">Random</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                <div class="row backgroundtext">Morning</div>
+              </div>
+              <div class="col">
+                <div class="row backgroundicon">
+                  <button type="button" class="btng" data-bg="afternoon" aria-label="Afternoon Background">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="row backgroundtext">Afternoon</div>
+              </div>
+              <div class="col">
+                <div class="row backgroundicon">
+                  <button type="button" class="btng" data-bg="random" aria-label="Random Background">
+                    <i class="fas fa-random" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="row backgroundtext">Random</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-		<!-- Success Modal-->
+  <!-- Success Modal-->
 
-		<div class="modal" tabindex="-1" id="streak-success">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title">Congratulations</h5>
-						<button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-					</div>
-					<div class="modal-body">
-						<p id="streaktext">
-							&#127880; &#127881; &#127882; You completed a 7 day streak - Well
-							Done! &#127882; &#127881; &#127880;
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
+  <div class="modal" tabindex="-1" id="streak-success">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Congratulations</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="streaktext">
+            &#127880; &#127881; &#127882; You completed a 7 day streak - Well Done! &#127882; &#127881; &#127880;
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-		<!-- Load Scripts-->
+  <!-- Load Scripts-->
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
-		<script src="https://kit.fontawesome.com/f34e635ca2.js" crossorigin="anonymous"></script>
-		<script src="assets/js/scripts/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+  <script src="https://kit.fontawesome.com/f34e635ca2.js" crossorigin="anonymous"></script>
+  <script src="assets/js/scripts/app.js"></script>
 </body>
 
 </html>
