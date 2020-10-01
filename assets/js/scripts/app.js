@@ -515,7 +515,7 @@ function streakInit() {
 }
 
 /**
- * Controlls the
+ * Controlls the Streak Bar
  */
 function mediStreak() {
   localStorage.setItem("dateLastDone", todayDate);
