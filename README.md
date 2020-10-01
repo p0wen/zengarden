@@ -306,12 +306,21 @@ If you want to deploy the site to githubpages yourself, you will need to adjust 
 * medium.com
 * css-tricks.com
 * https://webkit.org/
+* Registering Service Worker https://developers.google.com/web/fundamentals/primers/service-workers
+* Fix Viewport for mobile Browser https://dev.to/admitkard/mobile-issue-with-100vh-height-100-100vh-3-solutions-3nae
+* Accessing the Quotes - How to work with APIs based on this tutorial https://www.taniarascia.com/how-to-use-the-javascript-fetch-api-to-get-json-data
+* Fetch JSON feed from type.fit
+* Counting down the countdown & meditationduration (Solution based on https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown)
+* Streak Recording for past 7 days Inspiration by https://github.com/sanspoint/justdothething
+* Meditation-Timer Tutuorial (https://www.youtube.com/watch?v=oMBXdZzYqEk&lc=UgxCgmwEKX-ECmNdcqN4AaABAg)
+* iPhone safety margins https://webkit.org/blog/7929/designing-websites-for-iphone-x/
 
 ### Media
 
 * unsplash.com
 * freesound.org
 * http://ami.responsivedesign.is
+* favicon.io
 
 ### Acknowledgements
 
