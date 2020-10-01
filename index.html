@@ -26,6 +26,7 @@
 
 <body class="appview">
 	<div class="app container-fluid" id="myDiv">
+		<!-- Logo & Settings Section-->
 		<div class="row toolbar greyfilter">
 			<div class="col-8 appname">
 				<p><i class="fas fa-wind"></i> Zen Garden</p>
@@ -37,6 +38,7 @@
 					data-target="#settingsModal"><span class="fas fa-cogs"></span></a>
 			</div>
 		</div>
+		<!-- Quotes Section-->
 		<div class="row quote greyfilter">
 			<div class="col">
 				<p class="quoteheading">Quote of the Day:</p>
@@ -44,6 +46,7 @@
 				<p class="author"></p>
 			</div>
 		</div>
+		<!-- Meditation Timer Section (Circle, Play/Pause, Timer) -->
 		<div class="row greyfilter playershell">
 			<div class="player-container">
 				<div class="circle">
@@ -67,6 +70,7 @@
 				<p class="meditationtime"></p>
 			</div>
 		</div>
+		<!-- Streakbar -->
 		<div class="row streakbar greyfilter">
 			<div class="col">
 				<div class="row streak">Streak</div>
@@ -75,6 +79,7 @@
 		</div>
 	</div>
 
+	<!-- Settings Modal-->
 	<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLable"
 		aria-hidden="true">
 		<div class="modal-dialog">
@@ -91,6 +96,7 @@
             </button>
 				</div>
 				<div class="modal-body">
+					<!-- Choosing Meditation Duration -->
 					<div class="timersettings">
 						<h5>Timer</h5>
 						<div class="timersettings">
@@ -132,6 +138,7 @@
 						</div>
 					</div>
 					<hr />
+					<!-- Control Sound and Volume -->
 					<div class="soundsettings">
 						<h5>Ambient Sounds</h5>
 						<div class="row">
@@ -167,6 +174,7 @@
 							</div>
 						</div>
 						<hr />
+						<!-- Setting the Background-->
 						<div class="backgroundsettings changebackground">
 							<h5>Background</h5>
 							<div class="row">
